@@ -1,115 +1,277 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 710" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0f1d"/>
+    <!-- Dark Tech Canvas Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#0c1222"/>
       <stop offset="100%" stop-color="#050811"/>
     </linearGradient>
+
+    <!-- Card Gradients -->
     <linearGradient id="p1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="0%" stop-color="#2563eb"/>
       <stop offset="100%" stop-color="#60a5fa"/>
     </linearGradient>
     <linearGradient id="p2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="0%" stop-color="#059669"/>
       <stop offset="100%" stop-color="#34d399"/>
     </linearGradient>
     <linearGradient id="p3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="0%" stop-color="#7c3aed"/>
       <stop offset="100%" stop-color="#a78bfa"/>
     </linearGradient>
     <linearGradient id="p4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="0%" stop-color="#d97706"/>
       <stop offset="100%" stop-color="#fbbf24"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+
+    <!-- Moving Glow Filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
+    <filter id="glow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Card Masks for Flawless Corner Radii (prevents edge poke-out) -->
+    <clipPath id="cardClipP1">
+      <rect width="460" height="126" rx="14"/>
+    </clipPath>
+    <clipPath id="cardClipP2">
+      <rect width="460" height="126" rx="14"/>
+    </clipPath>
+    <clipPath id="cardClipP3">
+      <rect width="460" height="126" rx="14"/>
+    </clipPath>
+    <clipPath id="cardClipP4">
+      <rect width="460" height="126" rx="14"/>
+    </clipPath>
   </defs>
 
   <style>
-    .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 26px; font-weight: 800; fill: #ffffff; letter-spacing: -0.5px; }
-    .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; fill: #94a3b8; }
+    /* Clean Fonts */
+    .hero-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 800; fill: #ffffff; letter-spacing: -0.5px; }
+    .hero-subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; fill: #94a3b8; }
     .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
     .card-meta { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; font-weight: 600; }
-    .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #cbd5e1; line-height: 1.4; }
-    .badge { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; font-weight: bold; }
+    .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #cbd5e1; }
+    .badge-txt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+    .footer-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13.5px; fill: #e2e8f0; }
+
+    /* Keyframe Animations */
+    @keyframes circuitFlow {
+      0% { stroke-dashoffset: 48; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    @keyframes beacon {
+      0% { r: 4px; opacity: 1; }
+      100% { r: 14px; opacity: 0; }
+    }
+    @keyframes cardShimmer {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+      100% { opacity: 0.3; }
+    }
+
+    .animated-circuit {
+      stroke-dasharray: 8 6;
+      animation: circuitFlow 1.6s linear infinite;
+    }
+    .status-pulse {
+      animation: pulseGlow 2.5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .beacon-wave {
+      animation: beacon 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      transform-origin: center;
+    }
   </style>
 
-  <!-- Background -->
-  <rect width="1000" height="620" rx="16" fill="url(#bg)" stroke="#1e293b" stroke-width="2"/>
+  <!-- Canvas Background -->
+  <rect width="1080" height="710" rx="18" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
 
-  <!-- Header -->
-  <text x="50" y="55" class="title">Antigravity-OS: The 4-Pillar Synergy Architecture</text>
-  <text x="50" y="80" class="subtitle">Deterministic Non-Overlap Protocol across Specs, AST Graph, Episodic Memory, &amp; Execution Runtime</text>
-
-  <!-- Central Hub Lines -->
-  <path d="M 500 130 L 500 560" stroke="#334155" stroke-width="2" stroke-dasharray="6,6"/>
-
-  <!-- PILLAR 1: Prescriptive Specs -->
-  <g transform="translate(60, 110)">
-    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
-    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p1Grad)"/>
-    <text x="24" y="30" class="card-title">Pillar 1: Prescriptive Specifications</text>
-    <text x="24" y="50" class="card-meta" fill="#60a5fa">Location: /docs/01_PRD.md → 06_Plan.md</text>
-    <text x="24" y="75" class="card-desc">WHAT &amp; WHY to build: Design tokens, CSS contracts, API schemas.</text>
-    <rect x="290" y="16" width="95" height="22" rx="6" fill="#1e3a8a"/>
-    <text x="302" y="31" class="badge" fill="#93c5fd">50–70% SAVINGS</text>
+  <!-- Subtle Blueprint Tech Grid in Background -->
+  <g opacity="0.12" stroke="#38bdf8" stroke-width="0.5">
+    <line x1="50" y1="180" x2="1030" y2="180"/>
+    <line x1="50" y1="360" x2="1030" y2="360"/>
+    <line x1="50" y1="460" x2="1030" y2="460"/>
   </g>
 
-  <!-- PILLAR 2: Structural AST Graph -->
-  <g transform="translate(540, 110)">
-    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
-    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p2Grad)"/>
-    <text x="24" y="30" class="card-title">Pillar 2: Structural AST Graph</text>
-    <text x="24" y="50" class="card-meta" fill="#34d399">Engine: codebase-memory-mcp (Tree-sitter + SQLite)</text>
-    <text x="24" y="75" class="card-desc">HOW code is wired: Symbol call chains, callers, blast-radius queries.</text>
-    <rect x="290" y="16" width="95" height="22" rx="6" fill="#064e3b"/>
-    <text x="302" y="31" class="badge" fill="#6ee7b7">85–95% SAVINGS</text>
-  </g>
-
-  <!-- Flow Connector 1 -->
-  <circle cx="500" cy="245" r="16" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
-  <text x="495" y="250" font-family="monospace" font-size="14" fill="#38bdf8" font-weight="bold">↓</text>
-
-  <!-- PILLAR 3: Episodic Session Memory -->
-  <g transform="translate(60, 270)">
-    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5"/>
-    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p3Grad)"/>
-    <text x="24" y="30" class="card-title">Pillar 3: Episodic Session Memory</text>
-    <text x="24" y="50" class="card-meta" fill="#a78bfa">Storage: Trail-Code (.trail/learnings/) + ai-memory</text>
-    <text x="24" y="75" class="card-desc">WHAT failed &amp; was learned: Eliminates repeated dead-ends &amp; loops.</text>
-    <rect x="290" y="16" width="95" height="22" rx="6" fill="#4c1d95"/>
-    <text x="302" y="31" class="badge" fill="#c4b5fd">60–80% SAVINGS</text>
-  </g>
-
-  <!-- PILLAR 4: Specialist Execution & Runtime Gates -->
-  <g transform="translate(540, 270)">
-    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
-    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p4Grad)"/>
-    <text x="24" y="30" class="card-title">Pillar 4: Execution &amp; Runtime Gates</text>
-    <text x="24" y="50" class="card-meta" fill="#fbbf24">Engines: Gravitas (6 Invariants) + Ponytail (YAGNI)</text>
-    <text x="24" y="75" class="card-desc">HOW code is executed: Write-scope locks &amp; fresh validator gates.</text>
-    <rect x="290" y="16" width="95" height="22" rx="6" fill="#78350f"/>
-    <text x="302" y="31" class="badge" fill="#fde68a">45% LESS CODE</text>
-  </g>
-
-  <!-- Bottom Core Runtime Foundation Banner -->
-  <g transform="translate(60, 410)">
-    <rect width="880" height="170" rx="14" fill="#0c1322" stroke="#334155" stroke-width="1.5"/>
-    <text x="30" y="35" class="card-title" fill="#ffffff">Universal Discovery &amp; Mechanical Enforcement Fabric</text>
-    <text x="30" y="60" class="card-desc">
-      • 182 Specialized Skills across 21 Canonical Repositories (Anthropic, Supabase, Vercel, Expo, Superpowers, etc.)
-    </text>
-    <text x="30" y="85" class="card-desc">
-      • Gravitas Native Lifecycle Hooks (PreToolUse write-scope barrier + Stop post-mutation validator gate)
-    </text>
-    <text x="30" y="110" class="card-desc">
-      • Real-Time Token Ledger &amp; Skill Attribution enforced across Antigravity, Gemini CLI, Claude Code, Cursor, Windsurf
-    </text>
-    <rect x="30" y="130" width="230" height="26" rx="6" fill="#1e293b"/>
-    <text x="45" y="148" class="badge" fill="#38bdf8">Cross-Platform: Windows • macOS • Linux</text>
+  <!-- Header Section with Live Status Beacon -->
+  <g transform="translate(50, 48)">
+    <text x="0" y="0" class="hero-title">Antigravity-OS: The 4-Pillar Synergy Architecture</text>
+    <text x="0" y="24" class="hero-subtitle">Deterministic Non-Overlap Protocol across Specs, AST Graph, Episodic Memory &amp; Execution Runtime</text>
     
-    <rect x="275" y="130" width="200" height="26" rx="6" fill="#1e293b"/>
-    <text x="290" y="148" class="badge" fill="#4ade80">Zero-Config 1-Command Install</text>
+    <!-- Active Status Beacon (Top Right) -->
+    <g transform="translate(930, -8)">
+      <circle cx="10" cy="10" r="12" fill="#10b981" opacity="0.2" class="beacon-wave"/>
+      <circle cx="10" cy="10" r="5" fill="#10b981" filter="url(#glow-cyan)"/>
+      <text x="25" y="14" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#34d399">ACTIVE RUNTIME</text>
+    </g>
+  </g>
+
+  <!-- Animated Central Data Trunk Line -->
+  <path d="M 540 120 L 540 455" stroke="#334155" stroke-width="2.5"/>
+  <path d="M 540 120 L 540 455" stroke="#38bdf8" stroke-width="2" class="animated-circuit"/>
+
+  <!-- Horizontal Data Feeds to Cards -->
+  <path d="M 510 183 L 540 183" stroke="#38bdf8" stroke-width="1.5" class="animated-circuit"/>
+  <path d="M 540 183 L 570 183" stroke="#38bdf8" stroke-width="1.5" class="animated-circuit"/>
+  <path d="M 510 343 L 540 343" stroke="#38bdf8" stroke-width="1.5" class="animated-circuit"/>
+  <path d="M 540 343 L 570 343" stroke="#38bdf8" stroke-width="1.5" class="animated-circuit"/>
+
+  <!-- Central Hub Node -->
+  <g transform="translate(540, 263)">
+    <circle cx="0" cy="0" r="22" fill="#0c1322" stroke="#38bdf8" stroke-width="2.5" filter="url(#glow-cyan)"/>
+    <circle cx="0" cy="0" r="16" fill="#1e293b"/>
+    <text x="0" y="5" font-family="monospace" font-size="14" fill="#38bdf8" font-weight="900" text-anchor="middle">⚡</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- PILLAR 1: Prescriptive Specs (Top-Left) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(50, 120)">
+    <g clip-path="url(#cardClipP1)">
+      <!-- Card Body -->
+      <rect width="460" height="126" fill="#0c1527" stroke="#2563eb" stroke-width="1.5"/>
+      <!-- Perfectly Rounded Integrated Left Accent Bar -->
+      <rect x="0" y="0" width="8" height="126" fill="url(#p1Grad)"/>
+    </g>
+    <!-- Text & Content (with ample padding) -->
+    <text x="26" y="34" class="card-title">Pillar 1: Prescriptive Specifications</text>
+    <text x="26" y="58" class="card-meta" fill="#60a5fa">Location: /docs/01_PRD.md → 06_Plan.md</text>
+    <text x="26" y="84" class="card-desc">WHAT &amp; WHY to build: Design tokens, CSS contracts, API schemas.</text>
+    <text x="26" y="104" class="card-desc" fill="#94a3b8">Prevents guessing architectural intent by reading raw source files.</text>
+
+    <!-- Top-Right Badge -->
+    <g transform="translate(340, 18)" class="status-pulse">
+      <rect width="102" height="24" rx="6" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+      <text x="51" y="12" class="badge-txt" fill="#bfdbfe">50–70% SAVINGS</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- PILLAR 2: Structural AST Graph (Top-Right) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(570, 120)">
+    <g clip-path="url(#cardClipP2)">
+      <!-- Card Body -->
+      <rect width="460" height="126" fill="#081d1a" stroke="#059669" stroke-width="1.5"/>
+      <!-- Integrated Left Accent Bar -->
+      <rect x="0" y="0" width="8" height="126" fill="url(#p2Grad)"/>
+    </g>
+    <!-- Text & Content -->
+    <text x="26" y="34" class="card-title">Pillar 2: Structural AST Graph</text>
+    <text x="26" y="58" class="card-meta" fill="#34d399">Engine: codebase-memory-mcp (Tree-sitter + SQLite)</text>
+    <text x="26" y="84" class="card-desc">HOW code is wired: Symbol call chains, callers, blast radius queries.</text>
+    <text x="26" y="104" class="card-desc" fill="#94a3b8">Replaces 35,000-token file scans with 350-token graph traversal.</text>
+
+    <!-- Top-Right Badge -->
+    <g transform="translate(340, 18)" class="status-pulse">
+      <rect width="102" height="24" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="51" y="12" class="badge-txt" fill="#a7f3d0">85–95% SAVINGS</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- PILLAR 3: Episodic Session Memory (Bottom-Left) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(50, 280)">
+    <g clip-path="url(#cardClipP3)">
+      <!-- Card Body -->
+      <rect width="460" height="126" fill="#140f26" stroke="#7c3aed" stroke-width="1.5"/>
+      <!-- Integrated Left Accent Bar -->
+      <rect x="0" y="0" width="8" height="126" fill="url(#p3Grad)"/>
+    </g>
+    <!-- Text & Content -->
+    <text x="26" y="34" class="card-title">Pillar 3: Episodic Session Memory</text>
+    <text x="26" y="58" class="card-meta" fill="#a78bfa">Storage: Trail-Code (.trail/learnings/) + ai-memory</text>
+    <text x="26" y="84" class="card-desc">WHAT failed &amp; was learned: Dead-ends, rejected hypotheses &amp; quirks.</text>
+    <text x="26" y="104" class="card-desc" fill="#94a3b8">Stops the agent from repeating identical failed debugging trials.</text>
+
+    <!-- Top-Right Badge -->
+    <g transform="translate(340, 18)" class="status-pulse">
+      <rect width="102" height="24" rx="6" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="51" y="12" class="badge-txt" fill="#ddd6fe">60–80% SAVINGS</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- PILLAR 4: Specialist Execution & Runtime Gates (Bottom-Right) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(570, 280)">
+    <g clip-path="url(#cardClipP4)">
+      <!-- Card Body -->
+      <rect width="460" height="126" fill="#201509" stroke="#d97706" stroke-width="1.5"/>
+      <!-- Integrated Left Accent Bar -->
+      <rect x="0" y="0" width="8" height="126" fill="url(#p4Grad)"/>
+    </g>
+    <!-- Text & Content -->
+    <text x="26" y="34" class="card-title">Pillar 4: Execution &amp; Runtime Gates</text>
+    <text x="26" y="58" class="card-meta" fill="#fbbf24">Engines: Gravitas (6 Invariants) + Ponytail (YAGNI)</text>
+    <text x="26" y="84" class="card-desc">HOW code is executed: Write-scope locks &amp; fresh validator gates.</text>
+    <text x="26" y="104" class="card-desc" fill="#94a3b8">Blocks premature 'fixed' claims until tests pass post-mutation.</text>
+
+    <!-- Top-Right Badge -->
+    <g transform="translate(340, 18)" class="status-pulse">
+      <rect width="102" height="24" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+      <text x="51" y="12" class="badge-txt" fill="#fde68a">45% LESS CODE</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- FOUNDATION BANNER: Universal Discovery & Mechanical Enforcement Fabric   -->
+  <!-- ========================================================================= -->
+  <g transform="translate(50, 445)">
+    <!-- Main Card Body -->
+    <rect width="980" height="215" rx="16" fill="#0b1120" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Title with glowing accent -->
+    <text x="35" y="40" class="card-title" font-size="18">Universal Discovery &amp; Mechanical Enforcement Fabric</text>
+
+    <!-- Bullet Points with Custom Glow Bullets -->
+    <g transform="translate(35, 68)">
+      <circle cx="4" cy="-4" r="3.5" fill="#38bdf8"/>
+      <text x="18" y="0" class="footer-desc">
+        <tspan font-weight="700" fill="#38bdf8">182 Specialized Skills</tspan> across 21 Canonical Repositories (Anthropic, Supabase, Vercel, Expo, Superpowers, etc.)
+      </text>
+    </g>
+    <g transform="translate(35, 96)">
+      <circle cx="4" cy="-4" r="3.5" fill="#f59e0b"/>
+      <text x="18" y="0" class="footer-desc">
+        <tspan font-weight="700" fill="#f59e0b">Gravitas Native Lifecycle Hooks</tspan> (PreToolUse write-scope barrier + Stop post-mutation validator gate)
+      </text>
+    </g>
+    <g transform="translate(35, 124)">
+      <circle cx="4" cy="-4" r="3.5" fill="#10b981"/>
+      <text x="18" y="0" class="footer-desc">
+        <tspan font-weight="700" fill="#10b981">Real-Time Token Ledger</tspan> &amp; Skill Attribution enforced across Antigravity, Gemini CLI, Claude Code, Cursor, Windsurf
+      </text>
+    </g>
+
+    <!-- Three Roomy, Non-Truncated Badges with Perfect Margins -->
+    <!-- Pill 1: Cross-Platform -->
+    <g transform="translate(35, 150)">
+      <rect width="320" height="34" rx="8" fill="#172554" stroke="#2563eb" stroke-width="1"/>
+      <text x="160" y="17" class="badge-txt" fill="#93c5fd" font-size="12">Cross-Platform: Windows • macOS • Linux</text>
+    </g>
+
+    <!-- Pill 2: Zero-Config Install -->
+    <g transform="translate(375, 150)">
+      <rect width="270" height="34" rx="8" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+      <text x="135" y="17" class="badge-txt" fill="#6ee7b7" font-size="12">Zero-Config 1-Command Install</text>
+    </g>
+
+    <!-- Pill 3: Skills & Repos -->
+    <g transform="translate(665, 150)">
+      <rect width="280" height="34" rx="8" fill="#3b0764" stroke="#7c3aed" stroke-width="1"/>
+      <text x="140" y="17" class="badge-txt" fill="#d8b4fe" font-size="12">182 Skills • 21 Repositories</text>
+    </g>
   </g>
 </svg>
