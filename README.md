@@ -21,18 +21,18 @@ Install the complete runtime, all **182 skills**, global MCP servers, and the 4-
 
 ### 🪟 Windows (PowerShell)
 ```powershell
-irm https://raw.githubusercontent.com/<your-username>/antigravity-os/main/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts/install.ps1 | iex
 ```
 *(Or clone this repo and run `./scripts/install.ps1` in PowerShell as Administrator or regular user)*
 
 ### 🍎 macOS (Terminal)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<your-username>/antigravity-os/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts/install.sh | bash
 ```
 
 ### 🐧 Linux (Bash)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<your-username>/antigravity-os/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts/install.sh | bash
 ```
 
 ---
