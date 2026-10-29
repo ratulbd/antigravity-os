@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="p1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="p2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="p3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="p4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 26px; font-weight: 800; fill: #ffffff; letter-spacing: -0.5px; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; fill: #94a3b8; }
+    .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
+    .card-meta { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; font-weight: 600; }
+    .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #cbd5e1; line-height: 1.4; }
+    .badge { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; font-weight: bold; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1000" height="620" rx="16" fill="url(#bg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Header -->
+  <text x="50" y="55" class="title">Antigravity-OS: The 4-Pillar Synergy Architecture</text>
+  <text x="50" y="80" class="subtitle">Deterministic Non-Overlap Protocol across Specs, AST Graph, Episodic Memory, &amp; Execution Runtime</text>
+
+  <!-- Central Hub Lines -->
+  <path d="M 500 130 L 500 560" stroke="#334155" stroke-width="2" stroke-dasharray="6,6"/>
+
+  <!-- PILLAR 1: Prescriptive Specs -->
+  <g transform="translate(60, 110)">
+    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p1Grad)"/>
+    <text x="24" y="30" class="card-title">Pillar 1: Prescriptive Specifications</text>
+    <text x="24" y="50" class="card-meta" fill="#60a5fa">Location: /docs/01_PRD.md → 06_Plan.md</text>
+    <text x="24" y="75" class="card-desc">WHAT &amp; WHY to build: Design tokens, CSS contracts, API schemas.</text>
+    <rect x="290" y="16" width="95" height="22" rx="6" fill="#1e3a8a"/>
+    <text x="302" y="31" class="badge" fill="#93c5fd">50–70% SAVINGS</text>
+  </g>
+
+  <!-- PILLAR 2: Structural AST Graph -->
+  <g transform="translate(540, 110)">
+    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p2Grad)"/>
+    <text x="24" y="30" class="card-title">Pillar 2: Structural AST Graph</text>
+    <text x="24" y="50" class="card-meta" fill="#34d399">Engine: codebase-memory-mcp (Tree-sitter + SQLite)</text>
+    <text x="24" y="75" class="card-desc">HOW code is wired: Symbol call chains, callers, blast-radius queries.</text>
+    <rect x="290" y="16" width="95" height="22" rx="6" fill="#064e3b"/>
+    <text x="302" y="31" class="badge" fill="#6ee7b7">85–95% SAVINGS</text>
+  </g>
+
+  <!-- Flow Connector 1 -->
+  <circle cx="500" cy="245" r="16" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+  <text x="495" y="250" font-family="monospace" font-size="14" fill="#38bdf8" font-weight="bold">↓</text>
+
+  <!-- PILLAR 3: Episodic Session Memory -->
+  <g transform="translate(60, 270)">
+    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p3Grad)"/>
+    <text x="24" y="30" class="card-title">Pillar 3: Episodic Session Memory</text>
+    <text x="24" y="50" class="card-meta" fill="#a78bfa">Storage: Trail-Code (.trail/learnings/) + ai-memory</text>
+    <text x="24" y="75" class="card-desc">WHAT failed &amp; was learned: Eliminates repeated dead-ends &amp; loops.</text>
+    <rect x="290" y="16" width="95" height="22" rx="6" fill="#4c1d95"/>
+    <text x="302" y="31" class="badge" fill="#c4b5fd">60–80% SAVINGS</text>
+  </g>
+
+  <!-- PILLAR 4: Specialist Execution & Runtime Gates -->
+  <g transform="translate(540, 270)">
+    <rect width="400" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="100" rx="4" fill="url(#p4Grad)"/>
+    <text x="24" y="30" class="card-title">Pillar 4: Execution &amp; Runtime Gates</text>
+    <text x="24" y="50" class="card-meta" fill="#fbbf24">Engines: Gravitas (6 Invariants) + Ponytail (YAGNI)</text>
+    <text x="24" y="75" class="card-desc">HOW code is executed: Write-scope locks &amp; fresh validator gates.</text>
+    <rect x="290" y="16" width="95" height="22" rx="6" fill="#78350f"/>
+    <text x="302" y="31" class="badge" fill="#fde68a">45% LESS CODE</text>
+  </g>
+
+  <!-- Bottom Core Runtime Foundation Banner -->
+  <g transform="translate(60, 410)">
+    <rect width="880" height="170" rx="14" fill="#0c1322" stroke="#334155" stroke-width="1.5"/>
+    <text x="30" y="35" class="card-title" fill="#ffffff">Universal Discovery &amp; Mechanical Enforcement Fabric</text>
+    <text x="30" y="60" class="card-desc">
+      • 182 Specialized Skills across 21 Canonical Repositories (Anthropic, Supabase, Vercel, Expo, Superpowers, etc.)
+    </text>
+    <text x="30" y="85" class="card-desc">
+      • Gravitas Native Lifecycle Hooks (PreToolUse write-scope barrier + Stop post-mutation validator gate)
+    </text>
+    <text x="30" y="110" class="card-desc">
+      • Real-Time Token Ledger &amp; Skill Attribution enforced across Antigravity, Gemini CLI, Claude Code, Cursor, Windsurf
+    </text>
+    <rect x="30" y="130" width="230" height="26" rx="6" fill="#1e293b"/>
+    <text x="45" y="148" class="badge" fill="#38bdf8">Cross-Platform: Windows • macOS • Linux</text>
+    
+    <rect x="275" y="130" width="200" height="26" rx="6" fill="#1e293b"/>
+    <text x="290" y="148" class="badge" fill="#4ade80">Zero-Config 1-Command Install</text>
+  </g>
+</svg>

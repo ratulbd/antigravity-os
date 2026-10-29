@@ -1,0 +1,31 @@
+# 03. Global Skill Directory (182 Skills across 21 Repositories)
+
+Antigravity-OS ships with a curated collection of **182 battle-tested skills** across **21 authoritative open-source repositories**, staged directly into `%USERPROFILE%\.gemini\config\skills\` (or `~/.gemini/config/skills/`) and `~/.agents/skills/`.
+
+---
+
+## Repository Inventory
+
+| # | Repository URL | Skills Provided | Domain & Focus |
+| :--- | :--- | :--- | :--- |
+| **1** | `pbakaus/impeccable` | `impeccable` | 24 UI/UX design commands (`craft`, `critique`, `audit`, `polish`, `harden`) and 60+ anti-slop rules. |
+| **2** | `nextlevelbuilder/ui-ux-pro-max-skill` | `ui-ux-pro-max`, `design-system`, `ui-styling`, `design`, `brand`, `banner-design`, `slides` *(7 total)* | Enterprise design tokens, color harmonies, typography pairings, and HTML/Chart.js presentation decks. |
+| **3** | `Nutlope/hallmark` | `hallmark` | Layout variety, intentional visual hierarchy, and anti-template web design. |
+| **4** | `dietrichgebert/ponytail` | `ponytail`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`, `ponytail-review` *(6 total)* | The "Lazy Senior Dev" filter: YAGNI code reduction (▼45% output tokens, ▼53% LOC), standard library first. |
+| **5** | `cathrynlavery/diagram-design` | `diagram-design` | Editorial, self-contained SVG and HTML system architecture diagrams. |
+| **6** | `blader/humanizer` | `humanizer` | Eliminates AI-writing tropes, inflated marketing speech, and repetitive filler from documentation and copy. |
+| **7** | `d4vinci/Scrapling` | `scrapling` | Adaptive Python web scraping, stealth browser automation, and concurrent spider design. |
+| **8** | `sgunin/ReverseEngineerAnything` | `reverse-engineer-anything` | Deep binary, protocol, JavaScript bundle, and runtime reverse engineering. |
+| **9** | `tonydzi/second-brain-starter-kit` | `last30days` | Nightly signal slicing to identify what changed on a topic in the last 30 days. |
+| **10** | `Onyx-Systems/onyx-chat-template` | `onyx-chat-template` | Express.js + `nlp.js` + TypeORM + OpenAI hybrid conversational backend blueprint. |
+| **11** | `obra/superpowers` | `brainstorming`, `writing-plans`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `subagent-driven-development`, `executing-plans`, `dispatching-parallel-agents`, `requesting-code-review`, `receiving-code-review`, `using-git-worktrees`, `finishing-a-development-branch`, `writing-skills`, `using-superpowers`, `diagnosing-superpowers` *(15 total)* | Strict TDD, root-cause debugging, plan tracking, and verification workflows. |
+| **12** | `proyecto26/system-design-skills` | `system-design`, `requirements-scoping`, `back-of-the-envelope`, `api-design`, `data-storage`, `caching`, `blob-store`, `content-delivery`, `dns`, `load-balancing`, `messaging-streaming`, `task-scheduling`, `sharded-counters`, `distributed-search`, `distributed-logging`, `observability`, `consistency-coordination`, `resilience-failure`, `service-decomposition`, `sequencer`, `scaling-evolution`, `architecture-diagram` *(22 total)* | Distributed system design, QPS estimation, sharding, caching, and failover topologies. |
+| **13** | `codewithowais/senior-backend-dev` | `senior-backend-dev` | Production backend engineering (Node/TS, Python, Go, Rust), Clean Architecture, concurrency patterns. |
+| **14** | `supabase/agent-skills` | `supabase`, `supabase-postgres-best-practices` *(2 total)* | PostgreSQL indexing, RLS, query performance optimization, and lock-free schema migrations. |
+| **15** | `vercel-labs/agent-skills` | `react-best-practices`, `composition-patterns`, `web-design-guidelines`, `writing-guidelines`, `vercel-optimize`, `deploy-to-vercel`, `vercel-cli-with-tokens`, `react-view-transitions`, `react-native-skills` *(9 total)* | React/Next.js waterfall elimination, React 19 composition patterns, and bundle optimization. |
+| **16** | `expo/skills` | `expo-native-ui`, `expo-router`, `expo-data-fetching`, `expo-animation`, `expo-design-system`, `expo-project-structure`, `expo-ui`, `expo-overview`, `expo-dev-client`, `expo-module`, `expo-dom`, `expo-web-to-native`, `expo-brownfield`, `expo-app-clip`, `expo-examples`, `expo-upgrade`, `eas-workflows`, `eas-app-stores`, `eas-hosting`, `eas-update`, `eas-update-insights`, `eas-observe`, `eas-simulator` *(23 total)* | Complete React Native and Expo engineering, routing, EAS deployments, and native UI controls. |
+| **17** | `anthropics/skills` | `frontend-design`, `mcp-builder`, `webapp-testing`, `web-artifacts-builder`, `skill-creator`, `pdf`, `docx`, `xlsx`, `pptx`, `canvas-design`, `doc-coauthoring`, `brand-guidelines`, `theme-factory`, `internal-comms` *(14 total)* | Presentation decks (`pptx`), brochures/posters, Playwright testing, doc coauthoring, and MCP building. |
+| **18** | `skillcreatorai/Ai-Agent-Skills` | `database-design`, `backend-development`, `llm-application-dev`, `verification-agent`, `ask-questions-if-underspecified`, `best-practices`, `code-documentation`, `build-workspace-docs`, `changelog-generator`, `content-research-writer` *(10 total)* | RAG patterns, LLM application architecture, changelog generation, and technical documentation. |
+| **19** | `ComposioHQ/awesome-claude-skills` | `invoice-organizer`, `competitive-ads-extractor`, `lead-research-assistant`, `meeting-insights-analyzer`, `file-organizer`, `tailored-resume-generator`, `domain-name-brainstormer` *(7 total)* | Document automation, competitor intelligence scraping, and meeting transcript analysis. |
+| **20** | `coreyhaines31/marketingskills` | `cro`, `sales-enablement`, `copywriting`, `copy-editing`, `product-marketing`, `lead-magnets`, `ad-creative`, `competitor-profiling`, `competitors`, `pricing`, `launch`, `seo-audit`, `ai-seo`, `programmatic-seo`, `site-architecture`, `onboarding`, `offers`, `emails`, `cold-email`, `marketing-plan`, `marketing-psychology`, etc. *(52 total)* | Full-funnel growth engineering, conversion rate optimization, sales one-pagers, and SEO audit. |
+| **21** | `udaysharmadev/Gravitas` | `gravitas`, `gravitas-highstakes`, `gravitas-perf`, `gravitas-python`, `gravitas-security`, `gravitas-typescript` *(6 total)* | Engineering reliability runtime: 6 core invariants, `allowed_write_scope` lock, validator gates, and retry circuit breaker. |
