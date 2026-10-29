@@ -36,13 +36,13 @@ check_item() {
 echo -e "\n${CYAN}1. SKILL INVENTORY AUDIT:${NC}"
 GEMINI_COUNT=0
 [ -d "$GLOBAL_GEMINI_SKILLS" ] && GEMINI_COUNT=$(find "$GLOBAL_GEMINI_SKILLS" -mindepth 1 -maxdepth 1 -type d | wc -l)
-check_item "Gemini Skills Path (~/.gemini/config/skills)" "$([ "$GEMINI_COUNT" -ge 180 ] && echo 1 || echo 0)" "$GEMINI_COUNT skills detected"
+check_item "Gemini Skills Path (~/.gemini/config/skills)" "$([ "$GEMINI_COUNT" -ge 190 ] && echo 1 || echo 0)" "$GEMINI_COUNT skills detected"
 
 AGENT_COUNT=0
 [ -d "$GLOBAL_AGENT_SKILLS" ] && AGENT_COUNT=$(find "$GLOBAL_AGENT_SKILLS" -mindepth 1 -maxdepth 1 -type d | wc -l)
-check_item "Agent Skills Path (~/.agents/skills)" "$([ "$AGENT_COUNT" -ge 180 ] && echo 1 || echo 0)" "$AGENT_COUNT skills detected"
+check_item "Agent Skills Path (~/.agents/skills)" "$([ "$AGENT_COUNT" -ge 190 ] && echo 1 || echo 0)" "$AGENT_COUNT skills detected"
 
-KEY_SKILLS=("gravitas" "gravitas-highstakes" "using-superpowers" "verification-before-completion" "ponytail" "impeccable" "hallmark" "scrapling" "supabase")
+KEY_SKILLS=("gravitas" "gravitas-highstakes" "using-superpowers" "verification-before-completion" "ponytail" "impeccable" "hallmark" "scrapling" "supabase" "replica-recon")
 for k in "${KEY_SKILLS[@]}"; do
     HAS_SKILL=0
     [ -d "$GLOBAL_GEMINI_SKILLS/$k" ] && HAS_SKILL=1

@@ -1,6 +1,6 @@
 # Antigravity-OS 🚀
 
-> **The Production Runtime, Dual-Memory Architecture & 182-Skill Playbook for Google Antigravity & Universal AI Coding Agents.**  
+> **The Production Runtime, Dual-Memory Architecture & 193-Skill Playbook for Google Antigravity & Universal AI Coding Agents.**  
 > *Turn your AI coding assistant into a disciplined, autonomous software engineering team in under 2 minutes.*
 
 ---
@@ -8,8 +8,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License MIT">
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-emerald.svg?style=for-the-badge" alt="Platform Support">
-  <img src="https://img.shields.io/badge/Curated%20Skills-182%20Skills-violet.svg?style=for-the-badge" alt="182 Skills">
-  <img src="https://img.shields.io/badge/Canonical%20Repos-21%20Repos-orange.svg?style=for-the-badge" alt="21 Repositories">
+  <img src="https://img.shields.io/badge/Curated%20Skills-193%20Skills-violet.svg?style=for-the-badge" alt="193 Skills">
+  <img src="https://img.shields.io/badge/Canonical%20Repos-22%20Repos-orange.svg?style=for-the-badge" alt="22 Repositories">
   <img src="https://img.shields.io/badge/Token%20Savings-Up%20to%2095%25-green.svg?style=for-the-badge" alt="Token Savings">
 </p>
 
@@ -17,7 +17,7 @@
 
 ## ⚡ The 2-Minute Quickstart
 
-Install the complete runtime, all **182 skills**, global MCP servers, and the 4-Pillar Synergy rules with a single command:
+Install the complete runtime, all **193 skills**, global MCP servers, and the 4-Pillar Synergy rules with a single command:
 
 ### 🪟 Windows (PowerShell)
 ```powershell
@@ -98,7 +98,7 @@ Modern AI agents (even frontier models like Gemini 3.8 and Claude 3.7) suffer fr
 
 ---
 
-## 🗂️ The 21 Curated Repositories (182 Skills)
+## 🗂️ The 22 Curated Repositories (193 Skills)
 
 Antigravity-OS automatically aggregates, normalizes, and stages skills from the most respected agent repositories:
 
@@ -125,6 +125,7 @@ Antigravity-OS automatically aggregates, normalizes, and stages skills from the 
 | **19** | [`ComposioHQ/awesome-claude-skills`](https://github.com/ComposioHQ/awesome-claude-skills) | `invoice-organizer`, `competitive-ads-extractor`, `lead-research-assistant`, `meeting-insights-analyzer`, `file-organizer`, etc. *(7 total)* | Document automation, competitor intelligence scraping, and meeting transcript analysis. |
 | **20** | [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) | `cro`, `sales-enablement`, `copywriting`, `copy-editing`, `product-marketing`, `lead-magnets`, `ad-creative`, `pricing`, `seo-audit`, etc. *(52 total)* | Full-funnel growth engineering, conversion rate optimization, sales decks, and SEO audits. |
 | **21** | [`udaysharmadev/Gravitas`](https://github.com/udaysharmadev/Gravitas) | `gravitas`, `gravitas-highstakes`, `gravitas-perf`, `gravitas-python`, `gravitas-security`, `gravitas-typescript` *(6 total)* | Engineering reliability runtime: 6 core invariants, `allowed_write_scope` lock, and validator gates. |
+| **22** | [`Jakeschincariol/replica-skill`](https://github.com/Jakeschincariol/replica-skill) | `replica-recon`, `replica-architect`, `replica-design`, `replica-build`, `replica-backend`, `replica-test`, `replica-diff`, `replica-entrepreneur`, `replica-brand`, `replica-launch`, `replica-deploy` *(11 total)* | End-to-end product reverse-engineering & app replication pipeline from competitor observation to deployment. |
 
 ---
 

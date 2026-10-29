@@ -1,6 +1,6 @@
-# 03. Global Skill Directory (182 Skills across 21 Repositories)
+# 03. Global Skill Directory (193 Skills across 22 Repositories)
 
-Antigravity-OS ships with a curated collection of **182 battle-tested skills** across **21 authoritative open-source repositories**, staged directly into `%USERPROFILE%\.gemini\config\skills\` (or `~/.gemini/config/skills/`) and `~/.agents/skills/`.
+Antigravity-OS ships with a curated collection of **193 battle-tested skills** across **22 authoritative open-source repositories**, staged directly into `%USERPROFILE%\.gemini\config\skills\` (or `~/.gemini/config/skills/`) and `~/.agents/skills/`.
 
 ---
 
@@ -29,3 +29,4 @@ Antigravity-OS ships with a curated collection of **182 battle-tested skills** a
 | **19** | `ComposioHQ/awesome-claude-skills` | `invoice-organizer`, `competitive-ads-extractor`, `lead-research-assistant`, `meeting-insights-analyzer`, `file-organizer`, `tailored-resume-generator`, `domain-name-brainstormer` *(7 total)* | Document automation, competitor intelligence scraping, and meeting transcript analysis. |
 | **20** | `coreyhaines31/marketingskills` | `cro`, `sales-enablement`, `copywriting`, `copy-editing`, `product-marketing`, `lead-magnets`, `ad-creative`, `competitor-profiling`, `competitors`, `pricing`, `launch`, `seo-audit`, `ai-seo`, `programmatic-seo`, `site-architecture`, `onboarding`, `offers`, `emails`, `cold-email`, `marketing-plan`, `marketing-psychology`, etc. *(52 total)* | Full-funnel growth engineering, conversion rate optimization, sales one-pagers, and SEO audit. |
 | **21** | `udaysharmadev/Gravitas` | `gravitas`, `gravitas-highstakes`, `gravitas-perf`, `gravitas-python`, `gravitas-security`, `gravitas-typescript` *(6 total)* | Engineering reliability runtime: 6 core invariants, `allowed_write_scope` lock, validator gates, and retry circuit breaker. |
+| **22** | `Jakeschincariol/replica-skill` | `replica-recon`, `replica-architect`, `replica-design`, `replica-build`, `replica-backend`, `replica-test`, `replica-diff`, `replica-entrepreneur`, `replica-brand`, `replica-launch`, `replica-deploy` *(11 total)* | End-to-end product reverse-engineering & app replication pipeline from competitor observation to deployment. |

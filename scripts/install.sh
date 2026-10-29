@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # Antigravity-OS: Universal Agent Runtime Installer (macOS & Linux)
-# Installs 182 Skills across 21 Repositories, Dual-Memory Routing, and Global MCP
+# Installs 193 Skills across 22 Repositories, Dual-Memory Routing, and Global MCP
 # ==============================================================================
 
 set -euo pipefail
@@ -23,7 +23,7 @@ cat << "EOF"
  / __ |  / _  \/ __/ / _ `/ __// _ `/ |/ / / // _ \ / // __/ / _ \_\ \   / /__  
 /_/ |_| /_//_/\__/_/\_, /_/   \_,_/|___/  \_// .__//_/\__/  \___/___/   \___/  
                    /___/                    /_/                                
-       The Production Runtime & 182-Skill Playbook for AI Coding Agents
+       The Production Runtime & 193-Skill Playbook for AI Coding Agents
 ================================================================================
 EOF
 
@@ -75,13 +75,14 @@ declare -A REPOS=(
     ["awesome-claude-skills"]="https://github.com/ComposioHQ/awesome-claude-skills.git"
     ["marketingskills"]="https://github.com/coreyhaines31/marketingskills.git"
     ["Gravitas"]="https://github.com/udaysharmadev/Gravitas.git"
+    ["replica-skill"]="https://github.com/Jakeschincariol/replica-skill.git"
 )
 
 for name in "${!REPOS[@]}"; do
     echo -e "  → Cloning ${name}..."
     git clone --quiet --depth 1 "${REPOS[$name]}" "$REPOS_DIR/$name"
 done
-print_success "All 21 repositories cloned."
+print_success "All 22 repositories cloned."
 
 # 4. Stage and Normalize Skills
 print_step "Staging skills..."
@@ -99,6 +100,7 @@ cp -r "$REPOS_DIR/vercel-agent-skills/skills/"* "$STAGE_DIR/" 2>/dev/null || tru
 cp -r "$REPOS_DIR/expo-skills/plugins/expo/skills/"* "$STAGE_DIR/" 2>/dev/null || true
 cp -r "$REPOS_DIR/marketingskills/skills/"* "$STAGE_DIR/" 2>/dev/null || true
 cp -r "$REPOS_DIR/Gravitas/skills/"* "$STAGE_DIR/" 2>/dev/null || true
+cp -r "$REPOS_DIR/replica-skill/replica-"* "$STAGE_DIR/" 2>/dev/null || true
 
 if [ -d "$REPOS_DIR/Gravitas/plugins/gravitas-perf" ]; then
     cp -r "$REPOS_DIR/Gravitas/plugins/gravitas-perf" "$STAGE_DIR/"

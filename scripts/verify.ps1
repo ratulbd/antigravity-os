@@ -37,16 +37,16 @@ $geminiSkillsCount = 0
 if (Test-Path $globalGeminiSkills) {
     $geminiSkillsCount = (Get-ChildItem -Path $globalGeminiSkills -Directory).Count
 }
-Check-Item -Name "Gemini Skills Path (~/.gemini/config/skills)" -Condition ($geminiSkillsCount -ge 180) -Details "$geminiSkillsCount skills detected (Target: 182)"
+Check-Item -Name "Gemini Skills Path (~/.gemini/config/skills)" -Condition ($geminiSkillsCount -ge 190) -Details "$geminiSkillsCount skills detected (Target: 193)"
 
 $agentSkillsCount = 0
 if (Test-Path $globalAgentSkills) {
     $agentSkillsCount = (Get-ChildItem -Path $globalAgentSkills -Directory).Count
 }
-Check-Item -Name "Universal Agent Skills Path (~/.agents/skills)" -Condition ($agentSkillsCount -ge 180) -Details "$agentSkillsCount skills detected (Target: 182)"
+Check-Item -Name "Universal Agent Skills Path (~/.agents/skills)" -Condition ($agentSkillsCount -ge 190) -Details "$agentSkillsCount skills detected (Target: 193)"
 
 # Check Key Invariant Skills
-$keySkills = @("gravitas", "gravitas-highstakes", "using-superpowers", "verification-before-completion", "ponytail", "impeccable", "hallmark", "scrapling", "supabase")
+$keySkills = @("gravitas", "gravitas-highstakes", "using-superpowers", "verification-before-completion", "ponytail", "impeccable", "hallmark", "scrapling", "supabase", "replica-recon")
 foreach ($k in $keySkills) {
     $hasSkill = Test-Path (Join-Path $globalGeminiSkills $k)
     Check-Item -Name "Critical Skill [$k]" -Condition $hasSkill -Details "Installed and resolvable"

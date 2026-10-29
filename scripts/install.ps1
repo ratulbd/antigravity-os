@@ -1,6 +1,6 @@
 # ==============================================================================
 # Antigravity-OS: Universal Agent Runtime Installer (Windows PowerShell)
-# Installs 182 Skills across 21 Repositories, Dual-Memory Routing, and Global MCP
+# Installs 193 Skills across 22 Repositories, Dual-Memory Routing, and Global MCP
 # ==============================================================================
 
 [CmdletBinding()]
@@ -21,7 +21,7 @@ Write-Host @"
  / __ |  / _  \/ __/ / _ `/ __// _ `/ |/ / / // _ \ / // __/ / _ \_\ \   / /__  
 /_/ |_| /_//_/\__/_/\_, /_/   \_,_/|___/  \_// .__//_/\__/  \___/___/   \___/  
                    /___/                    /_/                                
-       The Production Runtime & 182-Skill Playbook for AI Coding Agents
+       The Production Runtime & 193-Skill Playbook for AI Coding Agents
 ================================================================================
 "@ -ForegroundColor Blue
 
@@ -67,18 +67,19 @@ $repos = @(
     @{ name = "ai-agent-skills";         url = "https://github.com/skillcreatorai/Ai-Agent-Skills.git" },
     @{ name = "awesome-claude-skills";   url = "https://github.com/ComposioHQ/awesome-claude-skills.git" },
     @{ name = "marketingskills";         url = "https://github.com/coreyhaines31/marketingskills.git" },
-    @{ name = "Gravitas";                url = "https://github.com/udaysharmadev/Gravitas.git" }
+    @{ name = "Gravitas";                url = "https://github.com/udaysharmadev/Gravitas.git" },
+    @{ name = "replica-skill";           url = "https://github.com/Jakeschincariol/replica-skill.git" }
 )
 
-Write-Step "Cloning 21 skill repositories in parallel / sequence..."
+Write-Step "Cloning 22 skill repositories in parallel / sequence..."
 foreach ($r in $repos) {
     Write-Host "  → Cloning $($r.name)..." -ForegroundColor Gray
     git clone --quiet --depth 1 $r.url (Join-Path $reposDir $r.name)
 }
-Write-Success "All 21 repositories cloned successfully."
+Write-Success "All 22 repositories cloned successfully."
 
 # 4. Stage and Normalize Skills
-Write-Step "Staging and normalizing 182 skills..."
+Write-Step "Staging and normalizing 193 skills..."
 
 Copy-Item -Path "$reposDir\impeccable\.agents\skills\*" -Destination $stageDir -Recurse -Force
 Copy-Item -Path "$reposDir\ui-ux-pro-max-skill\.claude\skills\*" -Destination $stageDir -Recurse -Force
@@ -93,6 +94,7 @@ Copy-Item -Path "$reposDir\vercel-agent-skills\skills\*" -Destination $stageDir 
 Copy-Item -Path "$reposDir\expo-skills\plugins\expo\skills\*" -Destination $stageDir -Recurse -Force
 Copy-Item -Path "$reposDir\marketingskills\skills\*" -Destination $stageDir -Recurse -Force
 Copy-Item -Path "$reposDir\Gravitas\skills\*" -Destination $stageDir -Recurse -Force
+Copy-Item -Path "$reposDir\replica-skill\replica-*" -Destination $stageDir -Recurse -Force
 
 if (Test-Path "$reposDir\Gravitas\plugins\gravitas-perf") { Copy-Item -Path "$reposDir\Gravitas\plugins\gravitas-perf" -Destination $stageDir -Recurse -Force }
 if (Test-Path "$reposDir\Gravitas\plugins\gravitas-security") { Copy-Item -Path "$reposDir\Gravitas\plugins\gravitas-security" -Destination $stageDir -Recurse -Force }
@@ -256,7 +258,7 @@ Write-Success "Cleaned temporary files."
 Write-Host @"
 ================================================================================
    ANTIGRAVITY-OS INSTALLATION COMPLETE!
-   • 182 Skills Installed Globally
+   • 193 Skills Installed Globally
    • Context7 & Playwright MCP Ready
    • 4-Pillar Synergy Rules Enforced
 ================================================================================
