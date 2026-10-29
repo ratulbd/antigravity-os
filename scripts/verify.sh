@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # ==============================================================================
 # Antigravity-OS: System Verification & Health Diagnostic (macOS & Linux)
 # ==============================================================================
@@ -27,29 +27,42 @@ check_item() {
     TOTAL=$((TOTAL + 1))
     if [ "$cond" -eq 1 ]; then
         PASSED=$((PASSED + 1))
-        echo -e "  ${GREEN}[✓] $name: $details${NC}"
+        echo -e "  ${GREEN}[âœ“] $name: $details${NC}"
     else
-        echo -e "  ${RED}[✗] $name: $details${NC}"
+        echo -e "  ${RED}[âœ—] $name: $details${NC}"
     fi
 }
 
 echo -e "\n${CYAN}1. SKILL INVENTORY AUDIT:${NC}"
 GEMINI_COUNT=0
 [ -d "$GLOBAL_GEMINI_SKILLS" ] && GEMINI_COUNT=$(find "$GLOBAL_GEMINI_SKILLS" -mindepth 1 -maxdepth 1 -type d | wc -l)
-check_item "Gemini Skills Path (~/.gemini/config/skills)" "$([ "$GEMINI_COUNT" -ge 190 ] && echo 1 || echo 0)" "$GEMINI_COUNT skills detected"
+check_item "Gemini Skills Path (~/.gemini/config/skills)" "$([ "$GEMINI_COUNT" -ge 500 ] && echo 1 || echo 0)" "$GEMINI_COUNT skills detected"
 
 AGENT_COUNT=0
 [ -d "$GLOBAL_AGENT_SKILLS" ] && AGENT_COUNT=$(find "$GLOBAL_AGENT_SKILLS" -mindepth 1 -maxdepth 1 -type d | wc -l)
-check_item "Agent Skills Path (~/.agents/skills)" "$([ "$AGENT_COUNT" -ge 190 ] && echo 1 || echo 0)" "$AGENT_COUNT skills detected"
+check_item "Agent Skills Path (~/.agents/skills)" "$([ "$AGENT_COUNT" -ge 500 ] && echo 1 || echo 0)" "$AGENT_COUNT skills detected"
 
-KEY_SKILLS=("gravitas" "gravitas-highstakes" "using-superpowers" "verification-before-completion" "ponytail" "impeccable" "hallmark" "scrapling" "supabase" "replica-recon")
+KEY_SKILLS=("gravitas" "gravitas-highstakes" "using-superpowers" "verification-before-completion" "ponytail" "impeccable" "hallmark" "scrapling" "supabase" "replica-recon" "continuous-learning-v2" "agent-security-hardening" "design-system-audit")
 for k in "${KEY_SKILLS[@]}"; do
     HAS_SKILL=0
     [ -d "$GLOBAL_GEMINI_SKILLS/$k" ] && HAS_SKILL=1
     check_item "Critical Skill [$k]" "$HAS_SKILL" "Installed and resolvable"
 done
 
-echo -e "\n${CYAN}2. MCP SERVERS CONFIGURATION:${NC}"
+
+AGENTS_DIR="$USER_HOME/.gemini/config/agents"
+AGENT_PERSONAS=0
+[ -d "$AGENTS_DIR" ] && AGENT_PERSONAS=$(find "$AGENTS_DIR" -name "*.md" | wc -l)
+check_item "Specialist Agent Personas (~/.gemini/config/agents)" "$([ "$AGENT_PERSONAS" -ge 70 ] && echo 1 || echo 0)" "$AGENT_PERSONAS personas detected"
+
+
+echo -e "\n${CYAN}2. SPECIALIST AGENT PERSONAS AUDIT:${NC}"
+AGENTS_DIR="$USER_HOME/.gemini/config/agents"
+AGENT_PERSONAS=0
+[ -d "$AGENTS_DIR" ] && AGENT_PERSONAS=$(find "$AGENTS_DIR" -name "*.md" | wc -l)
+check_item "Specialist Agent Personas (~/.gemini/config/agents)" "$([ "$AGENT_PERSONAS" -ge 70 ] && echo 1 || echo 0)" "$AGENT_PERSONAS personas detected (Target: 71)"
+
+echo -e "\n${CYAN}3. MCP SERVERS CONFIGURATION:${NC}"
 HAS_C7=0
 HAS_PW=0
 if [ -f "$MCP_CONFIG" ]; then
@@ -59,7 +72,7 @@ fi
 check_item "Context7 MCP Server" "$HAS_C7" "Configured with @upstash/context7-mcp"
 check_item "Playwright MCP Server" "$HAS_PW" "Configured with @playwright/mcp"
 
-echo -e "\n${CYAN}3. MANDATORY ATTRIBUTION & DUAL-MEMORY RULES:${NC}"
+echo -e "\n${CYAN}4. MANDATORY ATTRIBUTION & DUAL-MEMORY RULES:${NC}"
 RULE_PATHS=(
     "$USER_HOME/.gemini/GEMINI.md"
     "$USER_HOME/.gemini/AGENTS.md"
@@ -76,3 +89,5 @@ done
 echo -e "\n--------------------------------------------------------------------------------"
 echo -e "Diagnostic Summary: $PASSED / $TOTAL checks passed."
 echo -e "================================================================================\n"
+
+

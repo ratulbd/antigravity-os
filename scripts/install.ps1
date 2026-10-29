@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # Antigravity-OS: Universal Agent Runtime Installer (Windows PowerShell)
 # Installs 193 Skills across 22 Repositories, Dual-Memory Routing, and Global MCP
 # ==============================================================================
@@ -10,8 +10,9 @@ param (
 
 $ErrorActionPreference = "Stop"
 
-function Write-Step ($msg) { Write-Host "`n[+] $msg" -ForegroundColor Cyan }
-function Write-Success ($msg) { Write-Host "[✓] $msg" -ForegroundColor Green }
+function Write-Step ($msg) { Write-Host "
+[+] $msg" -ForegroundColor Cyan }
+function Write-Success ($msg) { Write-Host "[âœ“] $msg" -ForegroundColor Green }
 function Write-WarningMsg ($msg) { Write-Host "[!] $msg" -ForegroundColor Yellow }
 
 Write-Host @"
@@ -45,7 +46,7 @@ $globalAgentSkills  = Join-Path $userHome ".agents\skills"
 
 New-Item -ItemType Directory -Force -Path $reposDir, $stageDir, $globalGeminiSkills, $globalAgentSkills | Out-Null
 
-# 3. Clone the 21 Canonical Repositories
+# 3. Clone the 23 Canonical Repositories
 $repos = @(
     @{ name = "impeccable";              url = "https://github.com/pbakaus/impeccable.git" },
     @{ name = "ui-ux-pro-max-skill";     url = "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git" },
@@ -68,18 +69,19 @@ $repos = @(
     @{ name = "awesome-claude-skills";   url = "https://github.com/ComposioHQ/awesome-claude-skills.git" },
     @{ name = "marketingskills";         url = "https://github.com/coreyhaines31/marketingskills.git" },
     @{ name = "Gravitas";                url = "https://github.com/udaysharmadev/Gravitas.git" },
-    @{ name = "replica-skill";           url = "https://github.com/Jakeschincariol/replica-skill.git" }
+    @{ name = "replica-skill";           url = "https://github.com/Jakeschincariol/replica-skill.git" },
+        @{ name = "ecc";                     url = "https://github.com/affaan-m/ecc.git" }
 )
 
-Write-Step "Cloning 22 skill repositories in parallel / sequence..."
+Write-Step "Cloning 23 skill repositories in parallel / sequence..."
 foreach ($r in $repos) {
-    Write-Host "  → Cloning $($r.name)..." -ForegroundColor Gray
+    Write-Host "  â†’ Cloning $($r.name)..." -ForegroundColor Gray
     git clone --quiet --depth 1 $r.url (Join-Path $reposDir $r.name)
 }
-Write-Success "All 22 repositories cloned successfully."
+Write-Success "All 23 repositories cloned successfully."
 
 # 4. Stage and Normalize Skills
-Write-Step "Staging and normalizing 193 skills..."
+Write-Step "Staging and normalizing 503+ skills and 71 specialist agents..."
 
 Copy-Item -Path "$reposDir\impeccable\.agents\skills\*" -Destination $stageDir -Recurse -Force
 Copy-Item -Path "$reposDir\ui-ux-pro-max-skill\.claude\skills\*" -Destination $stageDir -Recurse -Force
@@ -223,9 +225,9 @@ Before writing code, designing systems/databases, debugging, or producing any ou
 
 Whenever you write code, propose an architecture, debug, review, or give any substantive output, you **MUST include this exact 3-line attribution & token-comparison block** at the top or bottom of your response:
 
-> **Skills Used:** `<skill-name-1>`, `<skill-name-2>` *(or `None — General Reasoning`)*  
+> **Skills Used:** `<skill-name-1>`, `<skill-name-2>` *(or `None â€” General Reasoning`)*  
 > **MCP Tools Used:** `<mcp-server-name>` *(e.g., `codebase-memory-mcp`, `context7`, `playwright`, `StitchMCP`, or `None`)*  
-> **Token Impact:** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` — *<brief reason>*
+> **Token Impact:** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` â€” *<brief reason>*
 "@
 }
 
@@ -258,8 +260,10 @@ Write-Success "Cleaned temporary files."
 Write-Host @"
 ================================================================================
    ANTIGRAVITY-OS INSTALLATION COMPLETE!
-   • 193 Skills Installed Globally
-   • Context7 & Playwright MCP Ready
-   • 4-Pillar Synergy Rules Enforced
+   â€¢ 193 Skills Installed Globally
+   â€¢ Context7 & Playwright MCP Ready
+   â€¢ 4-Pillar Synergy Rules Enforced
 ================================================================================
 "@ -ForegroundColor Green
+
+

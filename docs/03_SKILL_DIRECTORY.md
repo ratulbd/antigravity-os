@@ -1,4 +1,4 @@
-# 03. Global Skill Directory (193 Skills across 22 Repositories)
+﻿# 03. Global Skill Directory (193 Skills across 22 Repositories)
 
 Antigravity-OS ships with a curated collection of **193 battle-tested skills** across **22 authoritative open-source repositories**, staged directly into `%USERPROFILE%\.gemini\config\skills\` (or `~/.gemini/config/skills/`) and `~/.agents/skills/`.
 
@@ -11,7 +11,7 @@ Antigravity-OS ships with a curated collection of **193 battle-tested skills** a
 | **1** | `pbakaus/impeccable` | `impeccable` | 24 UI/UX design commands (`craft`, `critique`, `audit`, `polish`, `harden`) and 60+ anti-slop rules. |
 | **2** | `nextlevelbuilder/ui-ux-pro-max-skill` | `ui-ux-pro-max`, `design-system`, `ui-styling`, `design`, `brand`, `banner-design`, `slides` *(7 total)* | Enterprise design tokens, color harmonies, typography pairings, and HTML/Chart.js presentation decks. |
 | **3** | `Nutlope/hallmark` | `hallmark` | Layout variety, intentional visual hierarchy, and anti-template web design. |
-| **4** | `dietrichgebert/ponytail` | `ponytail`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`, `ponytail-review` *(6 total)* | The "Lazy Senior Dev" filter: YAGNI code reduction (▼45% output tokens, ▼53% LOC), standard library first. |
+| **4** | `dietrichgebert/ponytail` | `ponytail`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`, `ponytail-review` *(6 total)* | The "Lazy Senior Dev" filter: YAGNI code reduction (â–¼45% output tokens, â–¼53% LOC), standard library first. |
 | **5** | `cathrynlavery/diagram-design` | `diagram-design` | Editorial, self-contained SVG and HTML system architecture diagrams. |
 | **6** | `blader/humanizer` | `humanizer` | Eliminates AI-writing tropes, inflated marketing speech, and repetitive filler from documentation and copy. |
 | **7** | `d4vinci/Scrapling` | `scrapling` | Adaptive Python web scraping, stealth browser automation, and concurrent spider design. |
@@ -30,3 +30,5 @@ Antigravity-OS ships with a curated collection of **193 battle-tested skills** a
 | **20** | `coreyhaines31/marketingskills` | `cro`, `sales-enablement`, `copywriting`, `copy-editing`, `product-marketing`, `lead-magnets`, `ad-creative`, `competitor-profiling`, `competitors`, `pricing`, `launch`, `seo-audit`, `ai-seo`, `programmatic-seo`, `site-architecture`, `onboarding`, `offers`, `emails`, `cold-email`, `marketing-plan`, `marketing-psychology`, etc. *(52 total)* | Full-funnel growth engineering, conversion rate optimization, sales one-pagers, and SEO audit. |
 | **21** | `udaysharmadev/Gravitas` | `gravitas`, `gravitas-highstakes`, `gravitas-perf`, `gravitas-python`, `gravitas-security`, `gravitas-typescript` *(6 total)* | Engineering reliability runtime: 6 core invariants, `allowed_write_scope` lock, validator gates, and retry circuit breaker. |
 | **22** | `Jakeschincariol/replica-skill` | `replica-recon`, `replica-architect`, `replica-design`, `replica-build`, `replica-backend`, `replica-test`, `replica-diff`, `replica-entrepreneur`, `replica-brand`, `replica-launch`, `replica-deploy` *(11 total)* | End-to-end product reverse-engineering & app replication pipeline from competitor observation to deployment. |
+| **23** | `affaan-m/ecc` | `continuous-learning-v2`, `agent-security-hardening`, `design-system-audit`, `rest-api-patterns`, `codehealth-mcp`, `benchmark-optimization-loop`, `bengali-nlp`, `bun-runtime`, `clickhouse-io`, `carrier-relationship-management`, `compose-multiplatform-patterns`, `cisco-ios-patterns`, `autonomous-agent-harness`, plus 71 specialist agent personas (`a11y-architect`, `build-error-resolver`, `cpp-build-resolver`, `go-build-resolver`, `database-reviewer`, `code-simplifier`, etc.) *(310 skills + 71 agents)* | Everything Claude Code: The agent harness optimization suite, continuous learning with atomic instinct confidence scoring, and 71 specialized language/build resolvers. |
+

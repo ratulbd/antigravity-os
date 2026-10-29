@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # Antigravity-OS: System Verification & Health Diagnostic (Windows PowerShell)
 # ==============================================================================
 
@@ -37,23 +37,34 @@ $geminiSkillsCount = 0
 if (Test-Path $globalGeminiSkills) {
     $geminiSkillsCount = (Get-ChildItem -Path $globalGeminiSkills -Directory).Count
 }
-Check-Item -Name "Gemini Skills Path (~/.gemini/config/skills)" -Condition ($geminiSkillsCount -ge 190) -Details "$geminiSkillsCount skills detected (Target: 193)"
+Check-Item -Name "Gemini Skills Path (~/.gemini/config/skills)" -Condition ($geminiSkillsCount -ge 500) -Details "$geminiSkillsCount skills detected (Target: 503+)"
 
 $agentSkillsCount = 0
 if (Test-Path $globalAgentSkills) {
     $agentSkillsCount = (Get-ChildItem -Path $globalAgentSkills -Directory).Count
 }
-Check-Item -Name "Universal Agent Skills Path (~/.agents/skills)" -Condition ($agentSkillsCount -ge 190) -Details "$agentSkillsCount skills detected (Target: 193)"
+Check-Item -Name "Universal Agent Skills Path (~/.agents/skills)" -Condition ($agentSkillsCount -ge 500) -Details "$agentSkillsCount skills detected (Target: 503+)"
 
 # Check Key Invariant Skills
-$keySkills = @("gravitas", "gravitas-highstakes", "using-superpowers", "verification-before-completion", "ponytail", "impeccable", "hallmark", "scrapling", "supabase", "replica-recon")
+$keySkills = @("gravitas", "gravitas-highstakes", "using-superpowers", "verification-before-completion", "ponytail", "impeccable", "hallmark", "scrapling", "supabase", "replica-recon", "continuous-learning-v2", "agent-security-hardening", "design-system-audit")
 foreach ($k in $keySkills) {
     $hasSkill = Test-Path (Join-Path $globalGeminiSkills $k)
     Check-Item -Name "Critical Skill [$k]" -Condition $hasSkill -Details "Installed and resolvable"
 }
 
-# 2. MCP Configuration Audit
-Write-Host "`n2. MCP SERVERS CONFIGURATION:" -ForegroundColor Cyan
+
+# 2. Specialist Agent Personas Check
+Write-Host "
+2. SPECIALIST AGENT PERSONAS AUDIT:" -ForegroundColor Cyan
+$agentPersonasCount = 0
+$agentsDir = Join-Path $userHome ".gemini\config\agents"
+if (Test-Path $agentsDir) {
+    $agentPersonasCount = (Get-ChildItem -Path $agentsDir -Filter *.md).Count
+}
+Check-Item -Name "Specialist Agent Personas (~/.gemini/config/agents)" -Condition ($agentPersonasCount -ge 70) -Details "$agentPersonasCount personas detected (Target: 71)"
+
+# 3. MCP Configuration Audit
+Write-Host "`n3. MCP SERVERS CONFIGURATION:" -ForegroundColor Cyan
 $hasContext7 = $false
 $hasPlaywright = $false
 if (Test-Path $mcpConfigPath) {
@@ -66,8 +77,8 @@ if (Test-Path $mcpConfigPath) {
 Check-Item -Name "Context7 MCP Server" -Condition $hasContext7 -Details "Configured with @upstash/context7-mcp"
 Check-Item -Name "Playwright MCP Server" -Condition $hasPlaywright -Details "Configured with @playwright/mcp"
 
-# 3. Rule Attribution Files
-Write-Host "`n3. MANDATORY ATTRIBUTION AND DUAL-MEMORY RULES:" -ForegroundColor Cyan
+# 4. Rule Attribution Files
+Write-Host "`n4. MANDATORY ATTRIBUTION AND DUAL-MEMORY RULES:" -ForegroundColor Cyan
 $rulePaths = @(
     (Join-Path $userHome ".gemini\GEMINI.md"),
     (Join-Path $userHome ".gemini\AGENTS.md"),
@@ -86,3 +97,5 @@ $summaryColor = "Green"
 if ($script:passed -lt $script:total) { $summaryColor = "Yellow" }
 Write-Host "Diagnostic Summary: $($script:passed) / $($script:total) checks passed." -ForegroundColor $summaryColor
 Write-Host "================================================================================`n"
+
+

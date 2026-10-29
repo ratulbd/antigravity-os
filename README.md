@@ -1,6 +1,6 @@
-# Antigravity-OS 🚀
+﻿# Antigravity-OS ðŸš€
 
-> **The Production Runtime, Dual-Memory Architecture & 193-Skill Playbook for Google Antigravity & Universal AI Coding Agents.**  
+> **The Production Runtime, Dual-Memory Architecture & 503-Skill Playbook for Google Antigravity & Universal AI Coding Agents.**  
 > *Turn your AI coding assistant into a disciplined, autonomous software engineering team in under 2 minutes.*
 
 ---
@@ -8,36 +8,36 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License MIT">
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-emerald.svg?style=for-the-badge" alt="Platform Support">
-  <img src="https://img.shields.io/badge/Curated%20Skills-193%20Skills-violet.svg?style=for-the-badge" alt="193 Skills">
-  <img src="https://img.shields.io/badge/Canonical%20Repos-22%20Repos-orange.svg?style=for-the-badge" alt="22 Repositories">
+  <img src="https://img.shields.io/badge/Curated%20Skills-503%2B%20Skills-violet.svg?style=for-the-badge" alt="193 Skills">
+  <img src="https://img.shields.io/badge/Canonical%20Repos-23%20Repos-orange.svg?style=for-the-badge" alt="22 Repositories">
   <img src="https://img.shields.io/badge/Token%20Savings-Up%20to%2095%25-green.svg?style=for-the-badge" alt="Token Savings">
 </p>
 
 ---
 
-## ⚡ The 2-Minute Quickstart
+## âš¡ The 2-Minute Quickstart
 
-Install the complete runtime, all **193 skills**, global MCP servers, and the 4-Pillar Synergy rules with a single command:
+Install the complete runtime, all **503+ skills and 71 specialist agents**, global MCP servers, and the 4-Pillar Synergy rules with a single command:
 
-### 🪟 Windows (PowerShell)
+### ðŸªŸ Windows (PowerShell)
 ```powershell
 irm https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts/install.ps1 | iex
 ```
 *(Or clone this repo and run `./scripts/install.ps1` in PowerShell as Administrator or regular user)*
 
-### 🍎 macOS (Terminal)
+### ðŸŽ macOS (Terminal)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts/install.sh | bash
 ```
 
-### 🐧 Linux (Bash)
+### ðŸ§ Linux (Bash)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts/install.sh | bash
 ```
 
 ---
 
-## 📊 Graphical Architecture
+## ðŸ“Š Graphical Architecture
 
 <p align="center">
   <img src="./assets/architecture.svg" alt="Antigravity-OS 4-Pillar Architecture" width="100%">
@@ -46,7 +46,7 @@ curl -fsSL https://raw.githubusercontent.com/ratulbd/antigravity-os/main/scripts
 ```mermaid
 flowchart TD
     subgraph P1["Pillar 1: Prescriptive Specs"]
-        Specs["/docs/01_PRD.md → 06_Plan.md<br><b>WHAT & WHY</b>: Design tokens, CSS contracts, API schemas"]
+        Specs["/docs/01_PRD.md â†’ 06_Plan.md<br><b>WHAT & WHY</b>: Design tokens, CSS contracts, API schemas"]
     end
 
     subgraph P2["Pillar 2: Structural AST Graph"]
@@ -68,7 +68,7 @@ flowchart TD
 
 ---
 
-## 💡 Why Antigravity-OS?
+## ðŸ’¡ Why Antigravity-OS?
 
 Modern AI agents (even frontier models like Gemini 3.8 and Claude 3.7) suffer from three fatal production issues:
 
@@ -83,7 +83,7 @@ Modern AI agents (even frontier models like Gemini 3.8 and Claude 3.7) suffer fr
 
 ---
 
-## 📈 Empirical Proofs: Measured Token Savings
+## ðŸ“ˆ Empirical Proofs: Measured Token Savings
 
 <p align="center">
   <img src="./assets/token-savings.svg" alt="Token Savings Comparison" width="100%">
@@ -91,14 +91,14 @@ Modern AI agents (even frontier models like Gemini 3.8 and Claude 3.7) suffer fr
 
 | Workflow Scenario | Raw LLM Baseline | Antigravity-OS Runtime | Verified Reduction |
 | :--- | :--- | :--- | :--- |
-| **Symbol Call-Chain Discovery** | **~32,000 tokens** *(Reading 5 full files)* | **~350 tokens** *(Tree-sitter AST Graph)* | **▼ 98.9%** |
-| **Investigating Known Bug** | **~28,500 tokens** *(3–4 trial-and-error loops)* | **~2,400 tokens** *(`.trail` + Gravitas gate)* | **▼ 91.5%** |
-| **New Feature Implementation** | **~24,000 tokens** *(Unconstrained scans)* | **~4,100 tokens** *(Pillar 1 `/docs` spec)* | **▼ 82.9%** |
-| **Boilerplate Minimization** | **~1,200 LOC output** *(Over-engineered)* | **~560 LOC output** *(Ponytail YAGNI filter)* | **▼ 53.3% LOC<br>▼ 45% Tokens** |
+| **Symbol Call-Chain Discovery** | **~32,000 tokens** *(Reading 5 full files)* | **~350 tokens** *(Tree-sitter AST Graph)* | **â–¼ 98.9%** |
+| **Investigating Known Bug** | **~28,500 tokens** *(3â€“4 trial-and-error loops)* | **~2,400 tokens** *(`.trail` + Gravitas gate)* | **â–¼ 91.5%** |
+| **New Feature Implementation** | **~24,000 tokens** *(Unconstrained scans)* | **~4,100 tokens** *(Pillar 1 `/docs` spec)* | **â–¼ 82.9%** |
+| **Boilerplate Minimization** | **~1,200 LOC output** *(Over-engineered)* | **~560 LOC output** *(Ponytail YAGNI filter)* | **â–¼ 53.3% LOC<br>â–¼ 45% Tokens** |
 
 ---
 
-## 🗂️ The 22 Curated Repositories (193 Skills)
+## ðŸ—‚ï¸ The 23 Curated Repositories (503+ Skills & 71 Specialist Agents)
 
 Antigravity-OS automatically aggregates, normalizes, and stages skills from the most respected agent repositories:
 
@@ -107,7 +107,7 @@ Antigravity-OS automatically aggregates, normalizes, and stages skills from the 
 | **1** | [`pbakaus/impeccable`](https://github.com/pbakaus/impeccable) | `impeccable` | 24 UI/UX design commands (`craft`, `audit`, `polish`, `harden`) and anti-slop rules. |
 | **2** | [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | `ui-ux-pro-max`, `design-system`, `ui-styling`, `design`, `brand`, `banner-design`, `slides` | Design tokens, color palettes, typography, and HTML/Chart.js presentation slide decks. |
 | **3** | [`Nutlope/hallmark`](https://github.com/Nutlope/hallmark) | `hallmark` | Anti-template visual design, intentional layout variety, and non-generic web UI. |
-| **4** | [`dietrichgebert/ponytail`](https://github.com/dietrichgebert/ponytail) | `ponytail`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`, `ponytail-review` | "Lazy Senior Dev" mode: YAGNI minimal code (▼45% output tokens, ▼53% LOC), stdlib first. |
+| **4** | [`dietrichgebert/ponytail`](https://github.com/dietrichgebert/ponytail) | `ponytail`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`, `ponytail-review` | "Lazy Senior Dev" mode: YAGNI minimal code (â–¼45% output tokens, â–¼53% LOC), stdlib first. |
 | **5** | [`cathrynlavery/diagram-design`](https://github.com/cathrynlavery/diagram-design) | `diagram-design` | Editorial HTML & SVG system diagrams and interactive flowcharts. |
 | **6** | [`blader/humanizer`](https://github.com/blader/humanizer) | `humanizer` | Removes AI writing tropes, filler, and inflated phrasing from UI copy and documentation. |
 | **7** | [`d4vinci/Scrapling`](https://github.com/d4vinci/Scrapling) | `scrapling` | Adaptive Python web scraping, stealth browser automation, and concurrent spiders. |
@@ -129,7 +129,7 @@ Antigravity-OS automatically aggregates, normalizes, and stages skills from the 
 
 ---
 
-## 🛡️ The Gravitas Reliability Contract (6 Invariants)
+## ðŸ›¡ï¸ The Gravitas Reliability Contract (6 Invariants)
 
 Antigravity-OS incorporates the **Gravitas Runtime Engine** to govern how code is inspected and modified:
 
@@ -142,7 +142,7 @@ Antigravity-OS incorporates the **Gravitas Runtime Engine** to govern how code i
 
 ---
 
-## 🔍 Health Check & Diagnostic Tool
+## ðŸ” Health Check & Diagnostic Tool
 
 Verify that your system is correctly configured at any time:
 
@@ -162,21 +162,21 @@ Verify that your system is correctly configured at any time:
    ANTIGRAVITY-OS SYSTEM DIAGNOSTIC & VERIFICATION
 ================================================================================
 1. SKILL INVENTORY AUDIT:
-  [✓] Gemini Skills Path (~/.gemini/config/skills): 182 skills detected
-  [✓] Universal Agent Skills Path (~/.agents/skills): 182 skills detected
-  [✓] Critical Skill [gravitas]: Installed and resolvable
-  [✓] Critical Skill [superpowers]: Installed and resolvable
-  [✓] Critical Skill [ponytail]: Installed and resolvable
+  [âœ“] Gemini Skills Path (~/.gemini/config/skills): 182 skills detected
+  [âœ“] Universal Agent Skills Path (~/.agents/skills): 182 skills detected
+  [âœ“] Critical Skill [gravitas]: Installed and resolvable
+  [âœ“] Critical Skill [superpowers]: Installed and resolvable
+  [âœ“] Critical Skill [ponytail]: Installed and resolvable
 
 2. MCP SERVERS CONFIGURATION:
-  [✓] Context7 MCP Server: Configured with @upstash/context7-mcp
-  [✓] Playwright MCP Server: Configured with @playwright/mcp
+  [âœ“] Context7 MCP Server: Configured with @upstash/context7-mcp
+  [âœ“] Playwright MCP Server: Configured with @playwright/mcp
 
 3. MANDATORY ATTRIBUTION & DUAL-MEMORY RULES:
-  [✓] Rule .gemini/GEMINI.md: Enforcing 4-Pillars & Token Ledger
-  [✓] Rule .gemini/AGENTS.md: Enforcing 4-Pillars & Token Ledger
-  [✓] Rule .agents/AGENTS.md: Enforcing 4-Pillars & Token Ledger
-  [✓] Rule .claude/CLAUDE.md: Enforcing 4-Pillars & Token Ledger
+  [âœ“] Rule .gemini/GEMINI.md: Enforcing 4-Pillars & Token Ledger
+  [âœ“] Rule .gemini/AGENTS.md: Enforcing 4-Pillars & Token Ledger
+  [âœ“] Rule .agents/AGENTS.md: Enforcing 4-Pillars & Token Ledger
+  [âœ“] Rule .claude/CLAUDE.md: Enforcing 4-Pillars & Token Ledger
 
 Diagnostic Summary: All checks passed.
 ================================================================================
@@ -184,23 +184,23 @@ Diagnostic Summary: All checks passed.
 
 ---
 
-## 🌐 Universal IDE & Model Interoperability
+## ðŸŒ Universal IDE & Model Interoperability
 
 Antigravity-OS installs into universal skill discovery roots, making your 182 skills and dual-memory rules instantly available across:
 
 | Platform / Assistant | Supported Paths | Status |
 | :--- | :--- | :-: |
-| **Google Antigravity** | `%USERPROFILE%\.gemini\config\skills\` | 🟢 Native |
-| **Gemini CLI** | `~/.gemini/config/skills/` | 🟢 Native |
-| **Claude Code** | `~/.claude/CLAUDE.md` + `~/.agents/skills/` | 🟢 Native |
-| **Cursor IDE** | `.cursorrules` + `~/.agents/skills/` | 🟢 Native |
-| **Windsurf IDE** | `.windsurfrules` + `~/.agents/skills/` | 🟢 Native |
-| **Cline / Roo Code** | `.clinerules` + `~/.agents/skills/` | 🟢 Native |
-| **OpenCode** | `~/.agents/skills/` | 🟢 Native |
+| **Google Antigravity** | `%USERPROFILE%\.gemini\config\skills\` | ðŸŸ¢ Native |
+| **Gemini CLI** | `~/.gemini/config/skills/` | ðŸŸ¢ Native |
+| **Claude Code** | `~/.claude/CLAUDE.md` + `~/.agents/skills/` | ðŸŸ¢ Native |
+| **Cursor IDE** | `.cursorrules` + `~/.agents/skills/` | ðŸŸ¢ Native |
+| **Windsurf IDE** | `.windsurfrules` + `~/.agents/skills/` | ðŸŸ¢ Native |
+| **Cline / Roo Code** | `.clinerules` + `~/.agents/skills/` | ðŸŸ¢ Native |
+| **OpenCode** | `~/.agents/skills/` | ðŸŸ¢ Native |
 
 ---
 
-## 🤝 Contributing & Skill Attribution
+## ðŸ¤ Contributing & Skill Attribution
 
 Antigravity-OS stands on the shoulders of the open-source community. All skills maintain their upstream licenses and attributions. If you would like to contribute a new skill repository or improve runtime hooks:
 
@@ -210,6 +210,7 @@ Antigravity-OS stands on the shoulders of the open-source community. All skills 
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 
 Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full details.
+

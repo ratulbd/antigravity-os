@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # ==============================================================================
 # Antigravity-OS: Universal Agent Runtime Installer (macOS & Linux)
-# Installs 193 Skills across 22 Repositories, Dual-Memory Routing, and Global MCP
+# Installs 503+ skills and 71 specialist agents across 22 Repositories, Dual-Memory Routing, and Global MCP
 # ==============================================================================
 
 set -euo pipefail
@@ -13,7 +13,7 @@ GRAY='\033[0;90m'
 NC='\033[0m' # No Color
 
 print_step() { echo -e "\n${CYAN}[+] $1${NC}"; }
-print_success() { echo -e "${GREEN}[✓] $1${NC}"; }
+print_success() { echo -e "${GREEN}[âœ“] $1${NC}"; }
 print_warning() { echo -e "${YELLOW}[!] $1${NC}"; }
 
 cat << "EOF"
@@ -76,10 +76,11 @@ declare -A REPOS=(
     ["marketingskills"]="https://github.com/coreyhaines31/marketingskills.git"
     ["Gravitas"]="https://github.com/udaysharmadev/Gravitas.git"
     ["replica-skill"]="https://github.com/Jakeschincariol/replica-skill.git"
+    ["ecc"]="https://github.com/affaan-m/ecc.git"
 )
 
 for name in "${!REPOS[@]}"; do
-    echo -e "  → Cloning ${name}..."
+    echo -e "  â†’ Cloning ${name}..."
     git clone --quiet --depth 1 "${REPOS[$name]}" "$REPOS_DIR/$name"
 done
 print_success "All 22 repositories cloned."
@@ -101,6 +102,24 @@ cp -r "$REPOS_DIR/expo-skills/plugins/expo/skills/"* "$STAGE_DIR/" 2>/dev/null |
 cp -r "$REPOS_DIR/marketingskills/skills/"* "$STAGE_DIR/" 2>/dev/null || true
 cp -r "$REPOS_DIR/Gravitas/skills/"* "$STAGE_DIR/" 2>/dev/null || true
 cp -r "$REPOS_DIR/replica-skill/replica-"* "$STAGE_DIR/" 2>/dev/null || true
+
+    # Ingest and Normalize Everything Claude Code (ECC) skills
+    if [ -d "$REPOS_DIR/ecc/skills" ]; then
+        cp -r "$REPOS_DIR/ecc/skills/"* "$STAGE_DIR/" 2>/dev/null || true
+        if [ -d "$REPOS_DIR/ecc/skills/design-system" ]; then
+            cp -r "$REPOS_DIR/ecc/skills/design-system" "$STAGE_DIR/design-system-audit"
+            sed -i 's/name: design-system/name: design-system-audit/' "$STAGE_DIR/design-system-audit/SKILL.md" 2>/dev/null || true
+        fi
+        if [ -d "$REPOS_DIR/ecc/skills/api-design" ]; then
+            cp -r "$REPOS_DIR/ecc/skills/api-design" "$STAGE_DIR/rest-api-patterns"
+            sed -i 's/name: api-design/name: rest-api-patterns/' "$STAGE_DIR/rest-api-patterns/SKILL.md" 2>/dev/null || true
+        fi
+    fi
+    if [ -d "$REPOS_DIR/ecc/agents" ]; then
+        mkdir -p "$USER_HOME/.gemini/config/agents" "$USER_HOME/.agents/agents"
+        cp "$REPOS_DIR/ecc/agents/"*.md "$USER_HOME/.gemini/config/agents/" 2>/dev/null || true
+        cp "$REPOS_DIR/ecc/agents/"*.md "$USER_HOME/.agents/agents/" 2>/dev/null || true
+    fi
 
 if [ -d "$REPOS_DIR/Gravitas/plugins/gravitas-perf" ]; then
     cp -r "$REPOS_DIR/Gravitas/plugins/gravitas-perf" "$STAGE_DIR/"
@@ -228,7 +247,9 @@ print_success "Rules installed globally across all agent configurations."
 
 echo -e "\n${GREEN}================================================================================${NC}"
 echo -e "${GREEN}   ANTIGRAVITY-OS INSTALLATION COMPLETE!${NC}"
-echo -e "${GREEN}   • $INSTALLED_COUNT Skills Installed Globally${NC}"
-echo -e "${GREEN}   • Context7 & Playwright MCP Ready${NC}"
-echo -e "${GREEN}   • 4-Pillar Synergy Rules Enforced${NC}"
+echo -e "${GREEN}   â€¢ $INSTALLED_COUNT Skills Installed Globally${NC}"
+echo -e "${GREEN}   â€¢ Context7 & Playwright MCP Ready${NC}"
+echo -e "${GREEN}   â€¢ 4-Pillar Synergy Rules Enforced${NC}"
 echo -e "${GREEN}================================================================================${NC}"
+
+
