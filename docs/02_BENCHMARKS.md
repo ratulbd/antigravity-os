@@ -29,10 +29,11 @@ Every substantive response in Antigravity-OS includes this attribution and token
 ```markdown
 > **Skills Used:** <skill-name-1>, <skill-name-2> *(or None — General Reasoning)*
 > **MCP Tools Used:** <mcp-server-name> *(e.g., codebase-memory-mcp, context7, playwright, or None)*
-> **Token Impact:** **Used:** ~<X> tokens | **Without Setup (Baseline):** ~<Y> tokens | **Saved:** ~<Y-X> tokens (<Z>%) — <brief reason>
+> **Token Impact (Turn):** **Used:** ~<X> tokens | **Without Setup (Baseline):** ~<Y> tokens | **Saved:** ~<Y-X> tokens (<Z>%) — <brief reason>
+> **Global Context (Session):** **Active Window:** ~<W>k tokens *(~<C>% Cached)* | **Steps:** <S> *(or `/compact` recommended if >60k)*
 ```
 
 ### Calculation Rules:
-* **Used (~X tokens):** The tokens actually consumed by snippets, tool outputs, and prompt/response in this turn (~1 token per 4 characters).
-* **Without Setup (~Y tokens):** The conservative estimate of what an unconfigured agent would consume to achieve the same result (e.g. reading full source files or repeating ruled-out trials).
+* **Turn Impact (Used ~X tokens):** The tokens actually consumed by snippets, tool outputs, and prompt/response in this turn (~1 token per 4 characters) vs baseline if full files had been read.
+* **Global Context (Active Window ~Wk tokens):** The cumulative size of the active conversation thread (prompts + system prompt + tool calls + prior responses) and prompt cache ratio. Directly drives the 5h/weekly quota meter. When the active window exceeds ~60k–80k tokens, advise `/compact` to prevent rapid quota depletion.
 * **Pure Q&A Turns:** Report `Saved: ~0 tokens (0%) — Direct Q&A` to ensure honesty and avoid fabricated savings.

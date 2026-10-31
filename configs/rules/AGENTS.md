@@ -4,16 +4,22 @@ This rule applies to **all AI coding agents, IDE models, subagents, and third-pa
 
 ---
 
-## 1. Mandatory Skill Activation, MCP Disclosure & Per-Prompt Token Savings Note
+## 1. Mandatory Skill Activation, MCP Disclosure & Dual Token Ledger (Turn + Global Context)
 Before writing code, designing systems/databases, debugging, or producing any output, you MUST check and apply the relevant global skills installed in:
 - `$globalGeminiSkills\` (`~/.gemini/config/skills/`)
 - `$globalAgentSkills\` (`~/.agents/skills/`)
 
-Whenever you write code, propose an architecture, debug, review, or give any substantive output, you **MUST include this exact 3-line attribution & token-comparison block** at the top or bottom of your response:
+Whenever you write code, propose an architecture, debug, review, or give any substantive output, you **MUST include this exact 4-line dual attribution & token ledger block** at the top or bottom of your response:
 
 > **Skills Used:** `<skill-name-1>`, `<skill-name-2>` *(or `None — General Reasoning`)*  
 > **MCP Tools Used:** `<mcp-server-name>` *(e.g., `codebase-memory-mcp`, `context7`, `playwright`, `StitchMCP`, or `None`)*  
-> **Token Impact:** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` — *<brief reason: e.g., AST graph query via codebase-memory-mcp vs full file read, /docs spec lookup, .trail learning reuse, or Ponytail YAGNI filter>*
+> **Token Impact (Turn):** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` — *<brief reason: e.g., AST graph query via codebase-memory-mcp vs full file read, spec lookup, or Ponytail YAGNI filter>*  
+> **Global Context (Session):** **Active Window:** `~<W>k tokens` *(~<C>% Cached)* | **Steps:** `<S>` *(or `/compact` recommended if >60k)*
+
+### How to Calculate Both Ledger Metrics Honestly:
+- **Turn Impact (Used ~X tokens):** Estimate tokens consumed by files/snippets/MCP responses actually loaded in this turn (~1 token per 4 characters of tool output + prompt/response) vs baseline if full files had been read.
+- **Global Context (Active Window ~Wk tokens):** The current conversation context window size (fresh input + cached context tokens, typically recorded in transcript or estimated by conversation length), cache ratio, and step count. When active window exceeds 60k tokens, advise `/compact` to avoid accelerating 5h/weekly quota consumption.
+- If a turn is pure general conversation where no repo/skill shortcut applied, report `Saved: ~0 tokens (0%) — Direct Q&A`.
 
 ---
 

@@ -219,11 +219,12 @@ Before writing code, designing systems/databases, debugging, or producing any ou
 - `$globalGeminiSkills\`
 - `$globalAgentSkills\`
 
-Whenever you write code, propose an architecture, debug, review, or give any substantive output, you **MUST include this exact 3-line attribution & token-comparison block** at the top or bottom of your response:
+Whenever you write code, propose an architecture, debug, review, or give any substantive output, you **MUST include this exact 4-line dual attribution & token ledger block** at the top or bottom of your response:
 
 > **Skills Used:** `<skill-name-1>`, `<skill-name-2>` *(or `None — General Reasoning`)*  
 > **MCP Tools Used:** `<mcp-server-name>` *(e.g., `codebase-memory-mcp`, `context7`, `playwright`, `StitchMCP`, or `None`)*  
-> **Token Impact:** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` — *<brief reason>*
+> **Token Impact (Turn):** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` — *<brief reason>*  
+> **Global Context (Session):** **Active Window:** `~<W>k tokens` *(~<C>% Cached)* | **Steps:** `<S>` *(or `/compact` recommended if >60k)*
 "@
 }
 
