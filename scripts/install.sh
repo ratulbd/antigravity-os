@@ -1,7 +1,7 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # ==============================================================================
 # Antigravity-OS: Universal Agent Runtime Installer (macOS & Linux)
-# Installs 503+ skills and 71 specialist agents across 22 Repositories, Dual-Memory Routing, and Global MCP
+# Installs 503+ Skills across 23 Repositories, 71 Specialist Agents, Dual-Memory Routing, and Global MCP
 # ==============================================================================
 
 set -euo pipefail
@@ -13,7 +13,7 @@ GRAY='\033[0;90m'
 NC='\033[0m' # No Color
 
 print_step() { echo -e "\n${CYAN}[+] $1${NC}"; }
-print_success() { echo -e "${GREEN}[âœ“] $1${NC}"; }
+print_success() { echo -e "${GREEN}[✓] $1${NC}"; }
 print_warning() { echo -e "${YELLOW}[!] $1${NC}"; }
 
 cat << "EOF"
@@ -23,7 +23,7 @@ cat << "EOF"
  / __ |  / _  \/ __/ / _ `/ __// _ `/ |/ / / // _ \ / // __/ / _ \_\ \   / /__  
 /_/ |_| /_//_/\__/_/\_, /_/   \_,_/|___/  \_// .__//_/\__/  \___/___/   \___/  
                    /___/                    /_/                                
-       The Production Runtime & 193-Skill Playbook for AI Coding Agents
+       The Production Runtime & 503-Skill Playbook for AI Coding Agents
 ================================================================================
 EOF
 
@@ -51,7 +51,7 @@ cleanup() {
 trap cleanup EXIT
 
 # 3. Clone Repositories
-print_step "Cloning 21 canonical repositories..."
+print_step "Cloning 23 canonical repositories..."
 
 declare -A REPOS=(
     ["impeccable"]="https://github.com/pbakaus/impeccable.git"
@@ -80,10 +80,10 @@ declare -A REPOS=(
 )
 
 for name in "${!REPOS[@]}"; do
-    echo -e "  â†’ Cloning ${name}..."
+    echo -e "  → Cloning ${name}..."
     git clone --quiet --depth 1 "${REPOS[$name]}" "$REPOS_DIR/$name"
 done
-print_success "All 22 repositories cloned."
+print_success "All 23 repositories cloned."
 
 # 4. Stage and Normalize Skills
 print_step "Staging skills..."
@@ -101,25 +101,6 @@ cp -r "$REPOS_DIR/vercel-agent-skills/skills/"* "$STAGE_DIR/" 2>/dev/null || tru
 cp -r "$REPOS_DIR/expo-skills/plugins/expo/skills/"* "$STAGE_DIR/" 2>/dev/null || true
 cp -r "$REPOS_DIR/marketingskills/skills/"* "$STAGE_DIR/" 2>/dev/null || true
 cp -r "$REPOS_DIR/Gravitas/skills/"* "$STAGE_DIR/" 2>/dev/null || true
-cp -r "$REPOS_DIR/replica-skill/replica-"* "$STAGE_DIR/" 2>/dev/null || true
-
-    # Ingest and Normalize Everything Claude Code (ECC) skills
-    if [ -d "$REPOS_DIR/ecc/skills" ]; then
-        cp -r "$REPOS_DIR/ecc/skills/"* "$STAGE_DIR/" 2>/dev/null || true
-        if [ -d "$REPOS_DIR/ecc/skills/design-system" ]; then
-            cp -r "$REPOS_DIR/ecc/skills/design-system" "$STAGE_DIR/design-system-audit"
-            sed -i 's/name: design-system/name: design-system-audit/' "$STAGE_DIR/design-system-audit/SKILL.md" 2>/dev/null || true
-        fi
-        if [ -d "$REPOS_DIR/ecc/skills/api-design" ]; then
-            cp -r "$REPOS_DIR/ecc/skills/api-design" "$STAGE_DIR/rest-api-patterns"
-            sed -i 's/name: api-design/name: rest-api-patterns/' "$STAGE_DIR/rest-api-patterns/SKILL.md" 2>/dev/null || true
-        fi
-    fi
-    if [ -d "$REPOS_DIR/ecc/agents" ]; then
-        mkdir -p "$USER_HOME/.gemini/config/agents" "$USER_HOME/.agents/agents"
-        cp "$REPOS_DIR/ecc/agents/"*.md "$USER_HOME/.gemini/config/agents/" 2>/dev/null || true
-        cp "$REPOS_DIR/ecc/agents/"*.md "$USER_HOME/.agents/agents/" 2>/dev/null || true
-    fi
 
 if [ -d "$REPOS_DIR/Gravitas/plugins/gravitas-perf" ]; then
     cp -r "$REPOS_DIR/Gravitas/plugins/gravitas-perf" "$STAGE_DIR/"
@@ -247,9 +228,7 @@ print_success "Rules installed globally across all agent configurations."
 
 echo -e "\n${GREEN}================================================================================${NC}"
 echo -e "${GREEN}   ANTIGRAVITY-OS INSTALLATION COMPLETE!${NC}"
-echo -e "${GREEN}   â€¢ $INSTALLED_COUNT Skills Installed Globally${NC}"
-echo -e "${GREEN}   â€¢ Context7 & Playwright MCP Ready${NC}"
-echo -e "${GREEN}   â€¢ 4-Pillar Synergy Rules Enforced${NC}"
+echo -e "${GREEN}   • $INSTALLED_COUNT Skills Installed Globally${NC}"
+echo -e "${GREEN}   • Context7 & Playwright MCP Ready${NC}"
+echo -e "${GREEN}   • 4-Pillar Synergy Rules Enforced${NC}"
 echo -e "${GREEN}================================================================================${NC}"
-
-

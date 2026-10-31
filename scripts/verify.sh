@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # ==============================================================================
 # Antigravity-OS: System Verification & Health Diagnostic (macOS & Linux)
 # ==============================================================================
@@ -27,9 +27,9 @@ check_item() {
     TOTAL=$((TOTAL + 1))
     if [ "$cond" -eq 1 ]; then
         PASSED=$((PASSED + 1))
-        echo -e "  ${GREEN}[âœ“] $name: $details${NC}"
+        echo -e "  ${GREEN}[✓] $name: $details${NC}"
     else
-        echo -e "  ${RED}[âœ—] $name: $details${NC}"
+        echo -e "  ${RED}[✗] $name: $details${NC}"
     fi
 }
 
@@ -48,12 +48,6 @@ for k in "${KEY_SKILLS[@]}"; do
     [ -d "$GLOBAL_GEMINI_SKILLS/$k" ] && HAS_SKILL=1
     check_item "Critical Skill [$k]" "$HAS_SKILL" "Installed and resolvable"
 done
-
-
-AGENTS_DIR="$USER_HOME/.gemini/config/agents"
-AGENT_PERSONAS=0
-[ -d "$AGENTS_DIR" ] && AGENT_PERSONAS=$(find "$AGENTS_DIR" -name "*.md" | wc -l)
-check_item "Specialist Agent Personas (~/.gemini/config/agents)" "$([ "$AGENT_PERSONAS" -ge 70 ] && echo 1 || echo 0)" "$AGENT_PERSONAS personas detected"
 
 
 echo -e "\n${CYAN}2. SPECIALIST AGENT PERSONAS AUDIT:${NC}"
@@ -89,5 +83,3 @@ done
 echo -e "\n--------------------------------------------------------------------------------"
 echo -e "Diagnostic Summary: $PASSED / $TOTAL checks passed."
 echo -e "================================================================================\n"
-
-

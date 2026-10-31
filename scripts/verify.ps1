@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Antigravity-OS: System Verification & Health Diagnostic (Windows PowerShell)
 # ==============================================================================
 
@@ -54,8 +54,7 @@ foreach ($k in $keySkills) {
 
 
 # 2. Specialist Agent Personas Check
-Write-Host "
-2. SPECIALIST AGENT PERSONAS AUDIT:" -ForegroundColor Cyan
+Write-Host "`n2. SPECIALIST AGENT PERSONAS AUDIT:" -ForegroundColor Cyan
 $agentPersonasCount = 0
 $agentsDir = Join-Path $userHome ".gemini\config\agents"
 if (Test-Path $agentsDir) {
@@ -97,5 +96,3 @@ $summaryColor = "Green"
 if ($script:passed -lt $script:total) { $summaryColor = "Yellow" }
 Write-Host "Diagnostic Summary: $($script:passed) / $($script:total) checks passed." -ForegroundColor $summaryColor
 Write-Host "================================================================================`n"
-
-

@@ -1,6 +1,6 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Antigravity-OS: Universal Agent Runtime Installer (Windows PowerShell)
-# Installs 193 Skills across 22 Repositories, Dual-Memory Routing, and Global MCP
+# Installs 503+ Skills across 23 Repositories, 71 Specialist Agents, Dual-Memory Routing, and Global MCP
 # ==============================================================================
 
 [CmdletBinding()]
@@ -10,9 +10,8 @@ param (
 
 $ErrorActionPreference = "Stop"
 
-function Write-Step ($msg) { Write-Host "
-[+] $msg" -ForegroundColor Cyan }
-function Write-Success ($msg) { Write-Host "[âœ“] $msg" -ForegroundColor Green }
+function Write-Step ($msg) { Write-Host "`n[+] $msg" -ForegroundColor Cyan }
+function Write-Success ($msg) { Write-Host "[✓] $msg" -ForegroundColor Green }
 function Write-WarningMsg ($msg) { Write-Host "[!] $msg" -ForegroundColor Yellow }
 
 Write-Host @"
@@ -22,7 +21,7 @@ Write-Host @"
  / __ |  / _  \/ __/ / _ `/ __// _ `/ |/ / / // _ \ / // __/ / _ \_\ \   / /__  
 /_/ |_| /_//_/\__/_/\_, /_/   \_,_/|___/  \_// .__//_/\__/  \___/___/   \___/  
                    /___/                    /_/                                
-       The Production Runtime & 193-Skill Playbook for AI Coding Agents
+       The Production Runtime & 503-Skill Playbook for AI Coding Agents
 ================================================================================
 "@ -ForegroundColor Blue
 
@@ -68,14 +67,12 @@ $repos = @(
     @{ name = "ai-agent-skills";         url = "https://github.com/skillcreatorai/Ai-Agent-Skills.git" },
     @{ name = "awesome-claude-skills";   url = "https://github.com/ComposioHQ/awesome-claude-skills.git" },
     @{ name = "marketingskills";         url = "https://github.com/coreyhaines31/marketingskills.git" },
-    @{ name = "Gravitas";                url = "https://github.com/udaysharmadev/Gravitas.git" },
-    @{ name = "replica-skill";           url = "https://github.com/Jakeschincariol/replica-skill.git" },
-        @{ name = "ecc";                     url = "https://github.com/affaan-m/ecc.git" }
+    @{ name = "Gravitas";                url = "https://github.com/udaysharmadev/Gravitas.git" }
 )
 
 Write-Step "Cloning 23 skill repositories in parallel / sequence..."
 foreach ($r in $repos) {
-    Write-Host "  â†’ Cloning $($r.name)..." -ForegroundColor Gray
+    Write-Host "  → Cloning $($r.name)..." -ForegroundColor Gray
     git clone --quiet --depth 1 $r.url (Join-Path $reposDir $r.name)
 }
 Write-Success "All 23 repositories cloned successfully."
@@ -96,7 +93,6 @@ Copy-Item -Path "$reposDir\vercel-agent-skills\skills\*" -Destination $stageDir 
 Copy-Item -Path "$reposDir\expo-skills\plugins\expo\skills\*" -Destination $stageDir -Recurse -Force
 Copy-Item -Path "$reposDir\marketingskills\skills\*" -Destination $stageDir -Recurse -Force
 Copy-Item -Path "$reposDir\Gravitas\skills\*" -Destination $stageDir -Recurse -Force
-Copy-Item -Path "$reposDir\replica-skill\replica-*" -Destination $stageDir -Recurse -Force
 
 if (Test-Path "$reposDir\Gravitas\plugins\gravitas-perf") { Copy-Item -Path "$reposDir\Gravitas\plugins\gravitas-perf" -Destination $stageDir -Recurse -Force }
 if (Test-Path "$reposDir\Gravitas\plugins\gravitas-security") { Copy-Item -Path "$reposDir\Gravitas\plugins\gravitas-security" -Destination $stageDir -Recurse -Force }
@@ -225,9 +221,9 @@ Before writing code, designing systems/databases, debugging, or producing any ou
 
 Whenever you write code, propose an architecture, debug, review, or give any substantive output, you **MUST include this exact 3-line attribution & token-comparison block** at the top or bottom of your response:
 
-> **Skills Used:** `<skill-name-1>`, `<skill-name-2>` *(or `None â€” General Reasoning`)*  
+> **Skills Used:** `<skill-name-1>`, `<skill-name-2>` *(or `None — General Reasoning`)*  
 > **MCP Tools Used:** `<mcp-server-name>` *(e.g., `codebase-memory-mcp`, `context7`, `playwright`, `StitchMCP`, or `None`)*  
-> **Token Impact:** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` â€” *<brief reason>*
+> **Token Impact:** **Used:** `~<X> tokens` | **Without Setup (Baseline):** `~<Y> tokens` | **Saved:** `~<Y-X> tokens (<Z>%)` — *<brief reason>*
 "@
 }
 
@@ -260,10 +256,8 @@ Write-Success "Cleaned temporary files."
 Write-Host @"
 ================================================================================
    ANTIGRAVITY-OS INSTALLATION COMPLETE!
-   â€¢ 193 Skills Installed Globally
-   â€¢ Context7 & Playwright MCP Ready
-   â€¢ 4-Pillar Synergy Rules Enforced
+   • 182 Skills Installed Globally
+   • Context7 & Playwright MCP Ready
+   • 4-Pillar Synergy Rules Enforced
 ================================================================================
 "@ -ForegroundColor Green
-
-
